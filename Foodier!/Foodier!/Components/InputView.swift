@@ -18,19 +18,19 @@ struct InputView: View {
             Text(title)
                 .foregroundColor(Color(.darkGray))
                 .fontWeight(.semibold)
-                .font(.system(size: 15))
+                .font(.system(size: 14))
             
             if isSecureField {
                 SecureField(placeHolder, text: $text)
-                    .font(.system(size: 16))
-                    .padding(.vertical, 8)
+                    .font(.system(size: 14))
+                    .padding(.vertical, 10)
                     .background(Color(.lightGray))
                     .cornerRadius(8)
             }
             else {
                 TextField(placeHolder, text: $text)
-                    .font(.system(size: 16))
-                    .padding(.vertical, 8)
+                    .font(.system(size: 14))
+                    .padding(.vertical, 10)
                     .background(Color(.lightGray))
                     .cornerRadius(8)
             }

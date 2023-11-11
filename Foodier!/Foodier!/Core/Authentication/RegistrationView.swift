@@ -14,6 +14,7 @@ struct RegistrationView: View {
     @State private var password = ""
     @State private var confirm_password = ""
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         VStack {
@@ -40,11 +41,29 @@ struct RegistrationView: View {
                 InputView(text: $password,
                     title: "Password",
                     placeHolder: "Enter Your password",
-                          isSecureField: true)
-                InputView(text: $confirm_password,
-                    title: "Confirm Password",
-                    placeHolder: "Confirm Your password",
-                          isSecureField: true)
+                    isSecureField: true)
+                ZStack(alignment: .trailing) {
+                    InputView(text: $confirm_password,
+                        title: "Confirm Password",
+                        placeHolder: "Confirm Your password",
+                        isSecureField: true)
+                    
+                    if !password.isEmpty && !confirm_password.isEmpty {
+                        if password == confirm_password {
+                            Image(systemName: "checkmark.circle.fill")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .padding(.top, 15)
+                                .foregroundColor(Color(.systemGreen))
+                        } else {
+                            Image(systemName: "xmark.circle.fill")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .padding(.top, 15)
+                                .foregroundColor(Color(.systemRed))
+                        }
+                    }
+                }
             }
             .padding(.horizontal)
             .padding(.top, 12)
@@ -52,7 +71,10 @@ struct RegistrationView: View {
             // Sign Uo Button
             
             Button {
-                print("Sign user up...")
+                Task {
+                    try await viewModel.createUser(withEmail: email, password: password, fullname: full_name)
+                }
+
             } label: {
                 HStack {
                     Text("Sign Up")
@@ -64,6 +86,8 @@ struct RegistrationView: View {
                 .frame(width: UIScreen.main.bounds.width - 32, height: 40)
             }
             .background(Color(.systemBlue))
+            .disabled(!formIsValid)
+            .opacity(formIsValid ? 1.0 : 0.5)
             .cornerRadius(10)
             .padding(.top, 24)
             
@@ -77,9 +101,22 @@ struct RegistrationView: View {
                     Text("Sign In")
                         .fontWeight(.bold)
                 }
-                .font(.system(size: 15))
+                .font(.system(size: 14))
             }
         }
+    }
+}
+
+// MARK: -
+
+extension RegistrationView: AuthenticationFormProtocol {
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count>5
+        && confirm_password == password
+        && !full_name.isEmpty
     }
 }
 

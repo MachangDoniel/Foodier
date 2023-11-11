@@ -11,6 +11,7 @@ struct LoginView: View {
     
     @State private var email = ""
     @State private var password = ""
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         NavigationStack {
@@ -33,7 +34,7 @@ struct LoginView: View {
                     InputView(text: $password,
                         title: "Password",
                         placeHolder: "Enter Your password",
-                              isSecureField: true)
+                        isSecureField: true)
                 }
                 .padding(.horizontal)
                 .padding(.top, 12)
@@ -41,7 +42,9 @@ struct LoginView: View {
                 // Sign In Button
                 
                 Button {
-                    print("Sign user in...")
+                    Task {
+                        try await viewModel.signIn(withEmail: email, password: password)
+                    }
                 } label: {
                     HStack {
                         Text("Sign In")
@@ -53,6 +56,8 @@ struct LoginView: View {
                     .frame(width: UIScreen.main.bounds.width - 32, height: 40)
                 }
                 .background(Color(.systemBlue))
+                .disabled(!formIsValid)
+                .opacity(formIsValid ? 1.0 : 0.5)
                 .cornerRadius(10)
                 .padding(.top, 24)
 
@@ -70,11 +75,22 @@ struct LoginView: View {
                         Text("Sign Up")
                             .fontWeight(.bold)
                     }
-                    .font(.system(size: 15))
+                    .font(.system(size: 14))
                 }
                 
             }
         }
+    }
+}
+
+// MARK: -
+
+extension LoginView: AuthenticationFormProtocol {
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count>5
     }
 }
 

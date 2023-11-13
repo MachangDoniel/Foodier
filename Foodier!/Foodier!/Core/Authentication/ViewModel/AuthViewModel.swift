@@ -1,6 +1,6 @@
 //
 //  AuthViewModel.swift
-//  Foodier!
+//  Foodier For Restaurent!
 //
 //  Created by Biduit on 11/11/23.
 //

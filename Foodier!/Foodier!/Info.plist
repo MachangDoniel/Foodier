@@ -6,5 +6,7 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Please Allow To Read Location For Delivery</string>
 </dict>
 </plist>

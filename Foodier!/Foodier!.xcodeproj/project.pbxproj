@@ -10,6 +10,7 @@
 		A037691F2B010B9400192798 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A037691E2B010B9400192798 /* GoogleService-Info.plist */; };
 		A037692B2B0113BC00192798 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A037692A2B0113BC00192798 /* InputView.swift */; };
 		A037692D2B01142000192798 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A037692C2B01142000192798 /* ContentView.swift */; };
+		A041146B2B0225E4000186F9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041146A2B0225E4000186F9 /* SettingsView.swift */; };
 		A05B23412AFEB08A00EF10D5 /* Foodier_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B23402AFEB08A00EF10D5 /* Foodier_App.swift */; };
 		A05B23452AFEB08C00EF10D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05B23442AFEB08C00EF10D5 /* Assets.xcassets */; };
 		A05B23482AFEB08C00EF10D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05B23472AFEB08C00EF10D5 /* Preview Assets.xcassets */; };
@@ -86,6 +87,7 @@
 		A037691E2B010B9400192798 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A037692A2B0113BC00192798 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		A037692C2B01142000192798 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A041146A2B0225E4000186F9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A05B233D2AFEB08A00EF10D5 /* Foodier!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Foodier!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05B23402AFEB08A00EF10D5 /* Foodier_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foodier_App.swift; sourceTree = "<group>"; };
 		A05B23442AFEB08C00EF10D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -284,8 +286,6 @@
 			children = (
 				A05B23C62AFEE18600EF10D5 /* ViewModel */,
 				A05B23C52AFEE17600EF10D5 /* Views */,
-				A05B23782AFEB2E300EF10D5 /* LoginView.swift */,
-				A05B237C2AFEC76300EF10D5 /* RegistrationView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -301,6 +301,8 @@
 		A05B23C52AFEE17600EF10D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A05B23782AFEB2E300EF10D5 /* LoginView.swift */,
+				A05B237C2AFEC76300EF10D5 /* RegistrationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -325,6 +327,7 @@
 				A0AA86CD2AFFD15900A2477F /* OurPicks.swift */,
 				A0AA86D02AFFD15900A2477F /* TrendingWeek.swift */,
 				A05B23CD2AFF679300EF10D5 /* Home.swift */,
+				A041146A2B0225E4000186F9 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				A05B237D2AFEC76300EF10D5 /* RegistrationView.swift in Sources */,
 				A0AA86DA2AFFD15900A2477F /* NavBar.swift in Sources */,
 				A0AA86CA2AFFD13700A2477F /* onBoardingPage.swift in Sources */,
+				A041146B2B0225E4000186F9 /* SettingsView.swift in Sources */,
 				A05B23792AFEB2E300EF10D5 /* LoginView.swift in Sources */,
 				A05B23C82AFEE1C200EF10D5 /* AuthViewModel.swift in Sources */,
 				A05B23D32AFF6D3000EF10D5 /* HomeViewModel.swift in Sources */,

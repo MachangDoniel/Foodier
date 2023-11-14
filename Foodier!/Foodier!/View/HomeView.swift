@@ -193,7 +193,7 @@ struct SearchBar: View {
                         .font(.title2)
                         .multilineTextAlignment(.leading)
                         .foregroundColor(.white)
-                        .padding(.trailing, 20) 
+                        .padding(.trailing, 20)
                         .padding(.top, -30)
                 }
                 HStack {

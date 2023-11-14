@@ -1,0 +1,968 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A04114B52B0232F5000186F9 /* Foodier__RestaurantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04114B42B0232F5000186F9 /* Foodier__RestaurantApp.swift */; };
+		A04114B72B0232F5000186F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04114B62B0232F5000186F9 /* ContentView.swift */; };
+		A04114B92B0232F6000186F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04114B82B0232F6000186F9 /* Assets.xcassets */; };
+		A04114BC2B0232F6000186F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04114BB2B0232F6000186F9 /* Preview Assets.xcassets */; };
+		A04114BE2B0232F6000186F9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04114BD2B0232F6000186F9 /* Persistence.swift */; };
+		A04114C12B0232F6000186F9 /* Foodier__Restaurant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A04114BF2B0232F6000186F9 /* Foodier__Restaurant.xcdatamodeld */; };
+		A04114CC2B0232F6000186F9 /* Foodier__RestaurantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04114CB2B0232F6000186F9 /* Foodier__RestaurantTests.swift */; };
+		A04114D62B0232F6000186F9 /* Foodier__RestaurantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04114D52B0232F6000186F9 /* Foodier__RestaurantUITests.swift */; };
+		A04114D82B0232F6000186F9 /* Foodier__RestaurantUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04114D72B0232F6000186F9 /* Foodier__RestaurantUITestsLaunchTests.swift */; };
+		A04114E52B023362000186F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A04114E42B023362000186F9 /* GoogleService-Info.plist */; };
+		A04114E82B0233EC000186F9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A04114E72B0233EC000186F9 /* FirebaseAnalytics */; };
+		A04114EA2B0233EC000186F9 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = A04114E92B0233EC000186F9 /* FirebaseAnalyticsOnDeviceConversion */; };
+		A04114EC2B0233EC000186F9 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A04114EB2B0233EC000186F9 /* FirebaseAnalyticsSwift */; };
+		A04114EE2B0233EC000186F9 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = A04114ED2B0233EC000186F9 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		A04114F02B0233EC000186F9 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = A04114EF2B0233EC000186F9 /* FirebaseAppCheck */; };
+		A04114F22B0233EC000186F9 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = A04114F12B0233EC000186F9 /* FirebaseAppDistribution-Beta */; };
+		A04114F42B0233EC000186F9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A04114F32B0233EC000186F9 /* FirebaseAuth */; };
+		A04114F62B0233EC000186F9 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = A04114F52B0233EC000186F9 /* FirebaseAuthCombine-Community */; };
+		A04114F82B0233EC000186F9 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = A04114F72B0233EC000186F9 /* FirebaseCrashlytics */; };
+		A04114FA2B0233EC000186F9 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = A04114F92B0233EC000186F9 /* FirebaseDatabase */; };
+		A04114FC2B0233EC000186F9 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A04114FB2B0233EC000186F9 /* FirebaseDatabaseSwift */; };
+		A04114FE2B0233EC000186F9 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = A04114FD2B0233EC000186F9 /* FirebaseDynamicLinks */; };
+		A04115002B0233EC000186F9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A04114FF2B0233EC000186F9 /* FirebaseFirestore */; };
+		A04115022B0233EC000186F9 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = A04115012B0233EC000186F9 /* FirebaseFirestoreCombine-Community */; };
+		A04115042B0233EC000186F9 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A04115032B0233EC000186F9 /* FirebaseFirestoreSwift */; };
+		A04115062B0233EC000186F9 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = A04115052B0233EC000186F9 /* FirebaseFunctions */; };
+		A04115082B0233EC000186F9 /* FirebaseFunctionsCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = A04115072B0233EC000186F9 /* FirebaseFunctionsCombine-Community */; };
+		A041150A2B0233EC000186F9 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = A04115092B0233EC000186F9 /* FirebaseInAppMessaging-Beta */; };
+		A041150C2B0233EC000186F9 /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = A041150B2B0233EC000186F9 /* FirebaseInAppMessagingSwift-Beta */; };
+		A041150E2B0233EC000186F9 /* FirebaseInstallations in Frameworks */ = {isa = PBXBuildFile; productRef = A041150D2B0233EC000186F9 /* FirebaseInstallations */; };
+		A04115102B0233EC000186F9 /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = A041150F2B0233EC000186F9 /* FirebaseMLModelDownloader */; };
+		A04115122B0233EC000186F9 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = A04115112B0233EC000186F9 /* FirebaseMessaging */; };
+		A04115142B0233EC000186F9 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = A04115132B0233EC000186F9 /* FirebasePerformance */; };
+		A04115162B0233EC000186F9 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = A04115152B0233EC000186F9 /* FirebaseRemoteConfig */; };
+		A04115182B0233EC000186F9 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A04115172B0233EC000186F9 /* FirebaseRemoteConfigSwift */; };
+		A041151A2B0233EC000186F9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A04115192B0233EC000186F9 /* FirebaseStorage */; };
+		A041151C2B0233EC000186F9 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = A041151B2B0233EC000186F9 /* FirebaseStorageCombine-Community */; };
+		A04115242B0234F5000186F9 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04115232B0234F5000186F9 /* SettingsRowView.swift */; };
+		A04115262B023507000186F9 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04115252B023507000186F9 /* InputView.swift */; };
+		A041152C2B0235F6000186F9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041152B2B0235F6000186F9 /* ProfileView.swift */; };
+		A04115302B02362D000186F9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041152F2B02362D000186F9 /* AuthViewModel.swift */; };
+		A041153A2B0236D3000186F9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04115392B0236D3000186F9 /* HomeViewModel.swift */; };
+		A041153C2B023A76000186F9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041153B2B023A76000186F9 /* HomeView.swift */; };
+		A041153E2B023C0C000186F9 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041153D2B023C0B000186F9 /* Restaurant.swift */; };
+		A04115442B023F63000186F9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04115432B023F63000186F9 /* LoginView.swift */; };
+		A04115462B023F7B000186F9 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04115452B023F7B000186F9 /* RegistrationView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A04114C82B0232F6000186F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A04114A92B0232F5000186F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A04114B02B0232F5000186F9;
+			remoteInfo = "Foodier! Restaurant";
+		};
+		A04114D22B0232F6000186F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A04114A92B0232F5000186F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A04114B02B0232F5000186F9;
+			remoteInfo = "Foodier! Restaurant";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A04114B12B0232F5000186F9 /* Foodier! Restaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Foodier! Restaurant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A04114B42B0232F5000186F9 /* Foodier__RestaurantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foodier__RestaurantApp.swift; sourceTree = "<group>"; };
+		A04114B62B0232F5000186F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A04114B82B0232F6000186F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A04114BB2B0232F6000186F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A04114BD2B0232F6000186F9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		A04114C02B0232F6000186F9 /* Foodier__Restaurant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foodier__Restaurant.xcdatamodel; sourceTree = "<group>"; };
+		A04114C22B0232F6000186F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A04114C72B0232F6000186F9 /* Foodier! RestaurantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Foodier! RestaurantTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A04114CB2B0232F6000186F9 /* Foodier__RestaurantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foodier__RestaurantTests.swift; sourceTree = "<group>"; };
+		A04114D12B0232F6000186F9 /* Foodier! RestaurantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Foodier! RestaurantUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A04114D52B0232F6000186F9 /* Foodier__RestaurantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foodier__RestaurantUITests.swift; sourceTree = "<group>"; };
+		A04114D72B0232F6000186F9 /* Foodier__RestaurantUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foodier__RestaurantUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A04114E42B023362000186F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A04115232B0234F5000186F9 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		A04115252B023507000186F9 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		A041152B2B0235F6000186F9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A041152F2B02362D000186F9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		A04115392B0236D3000186F9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A041153B2B023A76000186F9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A041153D2B023C0B000186F9 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		A04115432B023F63000186F9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A04115452B023F7B000186F9 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A04114AE2B0232F5000186F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A04114FA2B0233EC000186F9 /* FirebaseDatabase in Frameworks */,
+				A04115082B0233EC000186F9 /* FirebaseFunctionsCombine-Community in Frameworks */,
+				A04115002B0233EC000186F9 /* FirebaseFirestore in Frameworks */,
+				A04114EC2B0233EC000186F9 /* FirebaseAnalyticsSwift in Frameworks */,
+				A04114E82B0233EC000186F9 /* FirebaseAnalytics in Frameworks */,
+				A04114EA2B0233EC000186F9 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				A04115102B0233EC000186F9 /* FirebaseMLModelDownloader in Frameworks */,
+				A04115042B0233EC000186F9 /* FirebaseFirestoreSwift in Frameworks */,
+				A04114F02B0233EC000186F9 /* FirebaseAppCheck in Frameworks */,
+				A04114EE2B0233EC000186F9 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				A04114F42B0233EC000186F9 /* FirebaseAuth in Frameworks */,
+				A04114F82B0233EC000186F9 /* FirebaseCrashlytics in Frameworks */,
+				A04115182B0233EC000186F9 /* FirebaseRemoteConfigSwift in Frameworks */,
+				A041150A2B0233EC000186F9 /* FirebaseInAppMessaging-Beta in Frameworks */,
+				A04114FC2B0233EC000186F9 /* FirebaseDatabaseSwift in Frameworks */,
+				A04115062B0233EC000186F9 /* FirebaseFunctions in Frameworks */,
+				A041151C2B0233EC000186F9 /* FirebaseStorageCombine-Community in Frameworks */,
+				A04115162B0233EC000186F9 /* FirebaseRemoteConfig in Frameworks */,
+				A04114F22B0233EC000186F9 /* FirebaseAppDistribution-Beta in Frameworks */,
+				A04114F62B0233EC000186F9 /* FirebaseAuthCombine-Community in Frameworks */,
+				A04115142B0233EC000186F9 /* FirebasePerformance in Frameworks */,
+				A041150C2B0233EC000186F9 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
+				A041151A2B0233EC000186F9 /* FirebaseStorage in Frameworks */,
+				A04114FE2B0233EC000186F9 /* FirebaseDynamicLinks in Frameworks */,
+				A04115022B0233EC000186F9 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				A04115122B0233EC000186F9 /* FirebaseMessaging in Frameworks */,
+				A041150E2B0233EC000186F9 /* FirebaseInstallations in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A04114C42B0232F6000186F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A04114CE2B0232F6000186F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A04114A82B0232F5000186F9 = {
+			isa = PBXGroup;
+			children = (
+				A04114B32B0232F5000186F9 /* Foodier! Restaurant */,
+				A04114CA2B0232F6000186F9 /* Foodier! RestaurantTests */,
+				A04114D42B0232F6000186F9 /* Foodier! RestaurantUITests */,
+				A04114B22B0232F5000186F9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A04114B22B0232F5000186F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A04114B12B0232F5000186F9 /* Foodier! Restaurant.app */,
+				A04114C72B0232F6000186F9 /* Foodier! RestaurantTests.xctest */,
+				A04114D12B0232F6000186F9 /* Foodier! RestaurantUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A04114B32B0232F5000186F9 /* Foodier! Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				A041151D2B023453000186F9 /* App */,
+				A041151E2B023468000186F9 /* Components */,
+				A041151F2B023475000186F9 /* Core */,
+				A04115202B023487000186F9 /* Model */,
+				A04115212B02348D000186F9 /* View */,
+				A04115222B023495000186F9 /* ViewModel */,
+				A04114B82B0232F6000186F9 /* Assets.xcassets */,
+				A04114BD2B0232F6000186F9 /* Persistence.swift */,
+				A04114C22B0232F6000186F9 /* Info.plist */,
+				A04114E42B023362000186F9 /* GoogleService-Info.plist */,
+				A04114BF2B0232F6000186F9 /* Foodier__Restaurant.xcdatamodeld */,
+				A04114BA2B0232F6000186F9 /* Preview Content */,
+			);
+			path = "Foodier! Restaurant";
+			sourceTree = "<group>";
+		};
+		A04114BA2B0232F6000186F9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A04114BB2B0232F6000186F9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A04114CA2B0232F6000186F9 /* Foodier! RestaurantTests */ = {
+			isa = PBXGroup;
+			children = (
+				A04114CB2B0232F6000186F9 /* Foodier__RestaurantTests.swift */,
+			);
+			path = "Foodier! RestaurantTests";
+			sourceTree = "<group>";
+		};
+		A04114D42B0232F6000186F9 /* Foodier! RestaurantUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A04114D52B0232F6000186F9 /* Foodier__RestaurantUITests.swift */,
+				A04114D72B0232F6000186F9 /* Foodier__RestaurantUITestsLaunchTests.swift */,
+			);
+			path = "Foodier! RestaurantUITests";
+			sourceTree = "<group>";
+		};
+		A041151D2B023453000186F9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A04114B42B0232F5000186F9 /* Foodier__RestaurantApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A041151E2B023468000186F9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A04115232B0234F5000186F9 /* SettingsRowView.swift */,
+				A04115252B023507000186F9 /* InputView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A041151F2B023475000186F9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A04115292B02354D000186F9 /* Root */,
+				A04115282B02353A000186F9 /* Authentication */,
+				A04115272B02352B000186F9 /* Profile */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A04115202B023487000186F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A041153D2B023C0B000186F9 /* Restaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A04115212B02348D000186F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A041153B2B023A76000186F9 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A04115222B023495000186F9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A04115392B0236D3000186F9 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A04115272B02352B000186F9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A041152B2B0235F6000186F9 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A04115282B02353A000186F9 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A041152E2B023619000186F9 /* Views */,
+				A041152D2B02360D000186F9 /* ViewModel */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		A04115292B02354D000186F9 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				A04114B62B0232F5000186F9 /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		A041152D2B02360D000186F9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A041152F2B02362D000186F9 /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A041152E2B023619000186F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A04115432B023F63000186F9 /* LoginView.swift */,
+				A04115452B023F7B000186F9 /* RegistrationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A04114B02B0232F5000186F9 /* Foodier! Restaurant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A04114DB2B0232F6000186F9 /* Build configuration list for PBXNativeTarget "Foodier! Restaurant" */;
+			buildPhases = (
+				A04114AD2B0232F5000186F9 /* Sources */,
+				A04114AE2B0232F5000186F9 /* Frameworks */,
+				A04114AF2B0232F5000186F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Foodier! Restaurant";
+			packageProductDependencies = (
+				A04114E72B0233EC000186F9 /* FirebaseAnalytics */,
+				A04114E92B0233EC000186F9 /* FirebaseAnalyticsOnDeviceConversion */,
+				A04114EB2B0233EC000186F9 /* FirebaseAnalyticsSwift */,
+				A04114ED2B0233EC000186F9 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				A04114EF2B0233EC000186F9 /* FirebaseAppCheck */,
+				A04114F12B0233EC000186F9 /* FirebaseAppDistribution-Beta */,
+				A04114F32B0233EC000186F9 /* FirebaseAuth */,
+				A04114F52B0233EC000186F9 /* FirebaseAuthCombine-Community */,
+				A04114F72B0233EC000186F9 /* FirebaseCrashlytics */,
+				A04114F92B0233EC000186F9 /* FirebaseDatabase */,
+				A04114FB2B0233EC000186F9 /* FirebaseDatabaseSwift */,
+				A04114FD2B0233EC000186F9 /* FirebaseDynamicLinks */,
+				A04114FF2B0233EC000186F9 /* FirebaseFirestore */,
+				A04115012B0233EC000186F9 /* FirebaseFirestoreCombine-Community */,
+				A04115032B0233EC000186F9 /* FirebaseFirestoreSwift */,
+				A04115052B0233EC000186F9 /* FirebaseFunctions */,
+				A04115072B0233EC000186F9 /* FirebaseFunctionsCombine-Community */,
+				A04115092B0233EC000186F9 /* FirebaseInAppMessaging-Beta */,
+				A041150B2B0233EC000186F9 /* FirebaseInAppMessagingSwift-Beta */,
+				A041150D2B0233EC000186F9 /* FirebaseInstallations */,
+				A041150F2B0233EC000186F9 /* FirebaseMLModelDownloader */,
+				A04115112B0233EC000186F9 /* FirebaseMessaging */,
+				A04115132B0233EC000186F9 /* FirebasePerformance */,
+				A04115152B0233EC000186F9 /* FirebaseRemoteConfig */,
+				A04115172B0233EC000186F9 /* FirebaseRemoteConfigSwift */,
+				A04115192B0233EC000186F9 /* FirebaseStorage */,
+				A041151B2B0233EC000186F9 /* FirebaseStorageCombine-Community */,
+			);
+			productName = "Foodier! Restaurant";
+			productReference = A04114B12B0232F5000186F9 /* Foodier! Restaurant.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A04114C62B0232F6000186F9 /* Foodier! RestaurantTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A04114DE2B0232F6000186F9 /* Build configuration list for PBXNativeTarget "Foodier! RestaurantTests" */;
+			buildPhases = (
+				A04114C32B0232F6000186F9 /* Sources */,
+				A04114C42B0232F6000186F9 /* Frameworks */,
+				A04114C52B0232F6000186F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A04114C92B0232F6000186F9 /* PBXTargetDependency */,
+			);
+			name = "Foodier! RestaurantTests";
+			productName = "Foodier! RestaurantTests";
+			productReference = A04114C72B0232F6000186F9 /* Foodier! RestaurantTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A04114D02B0232F6000186F9 /* Foodier! RestaurantUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A04114E12B0232F6000186F9 /* Build configuration list for PBXNativeTarget "Foodier! RestaurantUITests" */;
+			buildPhases = (
+				A04114CD2B0232F6000186F9 /* Sources */,
+				A04114CE2B0232F6000186F9 /* Frameworks */,
+				A04114CF2B0232F6000186F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A04114D32B0232F6000186F9 /* PBXTargetDependency */,
+			);
+			name = "Foodier! RestaurantUITests";
+			productName = "Foodier! RestaurantUITests";
+			productReference = A04114D12B0232F6000186F9 /* Foodier! RestaurantUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A04114A92B0232F5000186F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					A04114B02B0232F5000186F9 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					A04114C62B0232F6000186F9 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = A04114B02B0232F5000186F9;
+					};
+					A04114D02B0232F6000186F9 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = A04114B02B0232F5000186F9;
+					};
+				};
+			};
+			buildConfigurationList = A04114AC2B0232F5000186F9 /* Build configuration list for PBXProject "Foodier! Restaurant" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A04114A82B0232F5000186F9;
+			packageReferences = (
+				A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = A04114B22B0232F5000186F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A04114B02B0232F5000186F9 /* Foodier! Restaurant */,
+				A04114C62B0232F6000186F9 /* Foodier! RestaurantTests */,
+				A04114D02B0232F6000186F9 /* Foodier! RestaurantUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A04114AF2B0232F5000186F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A04114BC2B0232F6000186F9 /* Preview Assets.xcassets in Resources */,
+				A04114B92B0232F6000186F9 /* Assets.xcassets in Resources */,
+				A04114E52B023362000186F9 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A04114C52B0232F6000186F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A04114CF2B0232F6000186F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A04114AD2B0232F5000186F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A041153E2B023C0C000186F9 /* Restaurant.swift in Sources */,
+				A04114BE2B0232F6000186F9 /* Persistence.swift in Sources */,
+				A041153C2B023A76000186F9 /* HomeView.swift in Sources */,
+				A04115462B023F7B000186F9 /* RegistrationView.swift in Sources */,
+				A04114B72B0232F5000186F9 /* ContentView.swift in Sources */,
+				A04115242B0234F5000186F9 /* SettingsRowView.swift in Sources */,
+				A04115262B023507000186F9 /* InputView.swift in Sources */,
+				A04115442B023F63000186F9 /* LoginView.swift in Sources */,
+				A04115302B02362D000186F9 /* AuthViewModel.swift in Sources */,
+				A04114C12B0232F6000186F9 /* Foodier__Restaurant.xcdatamodeld in Sources */,
+				A041153A2B0236D3000186F9 /* HomeViewModel.swift in Sources */,
+				A041152C2B0235F6000186F9 /* ProfileView.swift in Sources */,
+				A04114B52B0232F5000186F9 /* Foodier__RestaurantApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A04114C32B0232F6000186F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A04114CC2B0232F6000186F9 /* Foodier__RestaurantTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A04114CD2B0232F6000186F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A04114D82B0232F6000186F9 /* Foodier__RestaurantUITestsLaunchTests.swift in Sources */,
+				A04114D62B0232F6000186F9 /* Foodier__RestaurantUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A04114C92B0232F6000186F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A04114B02B0232F5000186F9 /* Foodier! Restaurant */;
+			targetProxy = A04114C82B0232F6000186F9 /* PBXContainerItemProxy */;
+		};
+		A04114D32B0232F6000186F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A04114B02B0232F5000186F9 /* Foodier! Restaurant */;
+			targetProxy = A04114D22B0232F6000186F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A04114D92B0232F6000186F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A04114DA2B0232F6000186F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A04114DC2B0232F6000186F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Foodier! Restaurant/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ios.108.Foodier--Restaurant";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A04114DD2B0232F6000186F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Foodier! Restaurant/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ios.108.Foodier--Restaurant";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A04114DF2B0232F6000186F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ios.108.Foodier--RestaurantTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Foodier! Restaurant.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Foodier! Restaurant";
+			};
+			name = Debug;
+		};
+		A04114E02B0232F6000186F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ios.108.Foodier--RestaurantTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Foodier! Restaurant.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Foodier! Restaurant";
+			};
+			name = Release;
+		};
+		A04114E22B0232F6000186F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ios.108.Foodier--RestaurantUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Foodier! Restaurant";
+			};
+			name = Debug;
+		};
+		A04114E32B0232F6000186F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ios.108.Foodier--RestaurantUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Foodier! Restaurant";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A04114AC2B0232F5000186F9 /* Build configuration list for PBXProject "Foodier! Restaurant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A04114D92B0232F6000186F9 /* Debug */,
+				A04114DA2B0232F6000186F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A04114DB2B0232F6000186F9 /* Build configuration list for PBXNativeTarget "Foodier! Restaurant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A04114DC2B0232F6000186F9 /* Debug */,
+				A04114DD2B0232F6000186F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A04114DE2B0232F6000186F9 /* Build configuration list for PBXNativeTarget "Foodier! RestaurantTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A04114DF2B0232F6000186F9 /* Debug */,
+				A04114E02B0232F6000186F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A04114E12B0232F6000186F9 /* Build configuration list for PBXNativeTarget "Foodier! RestaurantUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A04114E22B0232F6000186F9 /* Debug */,
+				A04114E32B0232F6000186F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A04114E72B0233EC000186F9 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		A04114E92B0233EC000186F9 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		A04114EB2B0233EC000186F9 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		A04114ED2B0233EC000186F9 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		A04114EF2B0233EC000186F9 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		A04114F12B0233EC000186F9 /* FirebaseAppDistribution-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAppDistribution-Beta";
+		};
+		A04114F32B0233EC000186F9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		A04114F52B0233EC000186F9 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		A04114F72B0233EC000186F9 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		A04114F92B0233EC000186F9 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		A04114FB2B0233EC000186F9 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		A04114FD2B0233EC000186F9 /* FirebaseDynamicLinks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDynamicLinks;
+		};
+		A04114FF2B0233EC000186F9 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		A04115012B0233EC000186F9 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		A04115032B0233EC000186F9 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		A04115052B0233EC000186F9 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		A04115072B0233EC000186F9 /* FirebaseFunctionsCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFunctionsCombine-Community";
+		};
+		A04115092B0233EC000186F9 /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		A041150B2B0233EC000186F9 /* FirebaseInAppMessagingSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessagingSwift-Beta";
+		};
+		A041150D2B0233EC000186F9 /* FirebaseInstallations */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseInstallations;
+		};
+		A041150F2B0233EC000186F9 /* FirebaseMLModelDownloader */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMLModelDownloader;
+		};
+		A04115112B0233EC000186F9 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		A04115132B0233EC000186F9 /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
+		A04115152B0233EC000186F9 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		A04115172B0233EC000186F9 /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
+		A04115192B0233EC000186F9 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		A041151B2B0233EC000186F9 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04114E62B0233EC000186F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		A04114BF2B0232F6000186F9 /* Foodier__Restaurant.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A04114C02B0232F6000186F9 /* Foodier__Restaurant.xcdatamodel */,
+			);
+			currentVersion = A04114C02B0232F6000186F9 /* Foodier__Restaurant.xcdatamodel */;
+			path = Foodier__Restaurant.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A04114A92B0232F5000186F9 /* Project object */;
+}

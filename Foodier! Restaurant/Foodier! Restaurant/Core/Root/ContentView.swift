@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  Foodier!
+//  Foodier! Restaurant
 //
-//  Created by Biduit on 11/11/23.
+//  Created by Biduit on 13/11/23.
 //
 
 import SwiftUI
@@ -20,9 +20,9 @@ struct ContentView: View {
     var body: some View {
         Group {
             if viewModel.userSession != nil {
-                NavBar()
+                HomeView()
             } else {
-                OnBoarding()
+                LoginView()
             }
         }
 //        VStack {

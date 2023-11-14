@@ -14,6 +14,7 @@ struct NavBar: View {
         UITabBar.appearance().backgroundColor = .white
     }
     var body: some View {
+        
         TabView(selection: $selection) {
             HomeView().tabItem {
                 VStack {
@@ -39,7 +40,7 @@ struct NavBar: View {
                 
             }.tag(3)
             
-            Text("Settings").tabItem {
+            SettingsView().tabItem {
                 VStack {
                     Image(systemName: "gearshape.fill")
                     Text("Settings")

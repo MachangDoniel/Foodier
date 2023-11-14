@@ -14,7 +14,14 @@ struct LoginView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
+        //        LinearGradient(gradient: Gradient(colors: [Color.red, Color.white]), startPoint: .top, endPoint: .bottom)
+        //                        .edgesIgnoringSafeArea(.all)
         NavigationStack {
+            Group {
+                if viewModel.userSession != nil {
+                    HomeView()
+                }
+            }
             VStack {
                 // Image
                 Image("foodier")
@@ -27,14 +34,14 @@ struct LoginView: View {
                 
                 VStack(spacing: 0) {
                     InputView(text: $email,
-                        title: "Email Address",
-                        placeHolder: "name@example.com")
+                              title: "Email Address",
+                              placeHolder: "name@example.com")
                     .autocapitalization(.none)
-                        
+                    
                     InputView(text: $password,
-                        title: "Password",
-                        placeHolder: "Enter Your password",
-                        isSecureField: true)
+                              title: "Password",
+                              placeHolder: "Enter Your password",
+                              isSecureField: true)
                 }
                 .padding(.horizontal)
                 .padding(.top, 12)
@@ -44,13 +51,14 @@ struct LoginView: View {
                 Button {
                     Task {
                         try await viewModel.signIn(withEmail: email, password: password)
+                        
                     }
                 } label: {
                     HStack {
                         Text("Sign In")
                             .fontWeight(.semibold)
                         Image(systemName: "arrow.right")
-                            
+                        
                     }
                     .foregroundColor(.white)
                     .frame(width: UIScreen.main.bounds.width - 32, height: 40)
@@ -60,7 +68,7 @@ struct LoginView: View {
                 .opacity(formIsValid ? 1.0 : 0.5)
                 .cornerRadius(10)
                 .padding(.top, 24)
-
+                
                 
                 Spacer()
                 
@@ -82,7 +90,6 @@ struct LoginView: View {
         }
     }
 }
-
 // MARK: -
 
 extension LoginView: AuthenticationFormProtocol {
@@ -97,5 +104,7 @@ extension LoginView: AuthenticationFormProtocol {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .environmentObject(AuthViewModel()) // Add this line
+                        .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

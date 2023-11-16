@@ -5,13 +5,50 @@
 //  Created by Biduit on 13/11/23.
 //
 
+// HomeView.swift
+
 import SwiftUI
 
 struct HomeView: View {
+    @State private var selection = 1
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView(selection: $selection) {
+            
+            OurItemView().tabItem {
+                VStack {
+                    Image(systemName: "leaf.fill")
+                    Text("Home")
+                }
+                
+            }.tag(1)
+            
+            AddItemView().tabItem {
+                VStack {
+                    Image(systemName: "plus.circle.fill")
+                    Text("Cart")
+                }
+                
+            }.tag(2)
+            
+            ProfileView().tabItem {
+                VStack {
+                    Image(systemName: "person.fill")
+                    Text("My Kitchen")
+                }
+                
+            }.tag(3)
+            
+        }
+        .accentColor(.red)
+    }
+    
+    private func currentDateTimeFormatted() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, MMMM d, yyyy - h:mm a"
+        return formatter.string(from: Date())
     }
 }
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

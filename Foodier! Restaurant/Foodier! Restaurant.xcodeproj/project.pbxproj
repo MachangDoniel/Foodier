@@ -53,6 +53,12 @@
 		A041153E2B023C0C000186F9 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041153D2B023C0B000186F9 /* Restaurant.swift */; };
 		A04115442B023F63000186F9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04115432B023F63000186F9 /* LoginView.swift */; };
 		A04115462B023F7B000186F9 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04115452B023F7B000186F9 /* RegistrationView.swift */; };
+		A0930E172B0611D900AF5645 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0930E162B0611D900AF5645 /* Order.swift */; };
+		A0930E192B06123E00AF5645 /* Fooditem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0930E182B06123E00AF5645 /* Fooditem.swift */; };
+		A0930E1B2B0613B800AF5645 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0930E1A2B0613B800AF5645 /* SearchBar.swift */; };
+		A0930E1F2B061B3300AF5645 /* OurItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0930E1E2B061B3300AF5645 /* OurItemView.swift */; };
+		A0930E252B06410300AF5645 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0930E242B06410300AF5645 /* AddItemView.swift */; };
+		A0930E272B064ADC00AF5645 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0930E262B064ADC00AF5645 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +102,12 @@
 		A041153D2B023C0B000186F9 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		A04115432B023F63000186F9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A04115452B023F7B000186F9 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		A0930E162B0611D900AF5645 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		A0930E182B06123E00AF5645 /* Fooditem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fooditem.swift; sourceTree = "<group>"; };
+		A0930E1A2B0613B800AF5645 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		A0930E1E2B061B3300AF5645 /* OurItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurItemView.swift; sourceTree = "<group>"; };
+		A0930E242B06410300AF5645 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		A0930E262B064ADC00AF5645 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +257,8 @@
 			isa = PBXGroup;
 			children = (
 				A041153D2B023C0B000186F9 /* Restaurant.swift */,
+				A0930E162B0611D900AF5645 /* Order.swift */,
+				A0930E182B06123E00AF5645 /* Fooditem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +267,8 @@
 			isa = PBXGroup;
 			children = (
 				A041153B2B023A76000186F9 /* HomeView.swift */,
+				A0930E1E2B061B3300AF5645 /* OurItemView.swift */,
+				A0930E242B06410300AF5645 /* AddItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -261,6 +277,8 @@
 			isa = PBXGroup;
 			children = (
 				A04115392B0236D3000186F9 /* HomeViewModel.swift */,
+				A0930E1A2B0613B800AF5645 /* SearchBar.swift */,
+				A0930E262B064ADC00AF5645 /* ImagePicker.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -470,10 +488,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0930E192B06123E00AF5645 /* Fooditem.swift in Sources */,
+				A0930E252B06410300AF5645 /* AddItemView.swift in Sources */,
 				A041153E2B023C0C000186F9 /* Restaurant.swift in Sources */,
 				A04114BE2B0232F6000186F9 /* Persistence.swift in Sources */,
+				A0930E172B0611D900AF5645 /* Order.swift in Sources */,
 				A041153C2B023A76000186F9 /* HomeView.swift in Sources */,
 				A04115462B023F7B000186F9 /* RegistrationView.swift in Sources */,
+				A0930E272B064ADC00AF5645 /* ImagePicker.swift in Sources */,
 				A04114B72B0232F5000186F9 /* ContentView.swift in Sources */,
 				A04115242B0234F5000186F9 /* SettingsRowView.swift in Sources */,
 				A04115262B023507000186F9 /* InputView.swift in Sources */,
@@ -482,6 +504,8 @@
 				A04114C12B0232F6000186F9 /* Foodier__Restaurant.xcdatamodeld in Sources */,
 				A041153A2B0236D3000186F9 /* HomeViewModel.swift in Sources */,
 				A041152C2B0235F6000186F9 /* ProfileView.swift in Sources */,
+				A0930E1F2B061B3300AF5645 /* OurItemView.swift in Sources */,
+				A0930E1B2B0613B800AF5645 /* SearchBar.swift in Sources */,
 				A04114B52B0232F5000186F9 /* Foodier__RestaurantApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

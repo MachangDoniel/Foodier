@@ -25,7 +25,7 @@ struct HomeView: View {
             AddItemView().tabItem {
                 VStack {
                     Image(systemName: "plus.circle.fill")
-                    Text("Cart")
+                    Text("Add Item")
                 }
                 
             }.tag(2)

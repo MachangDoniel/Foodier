@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0234CE32B0FACDC007CF961 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0234CE22B0FACDC007CF961 /* ItemDetailView.swift */; };
 		A04114B52B0232F5000186F9 /* Foodier__RestaurantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04114B42B0232F5000186F9 /* Foodier__RestaurantApp.swift */; };
 		A04114B72B0232F5000186F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04114B62B0232F5000186F9 /* ContentView.swift */; };
 		A04114B92B0232F6000186F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04114B82B0232F6000186F9 /* Assets.xcassets */; };
@@ -79,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A0234CE22B0FACDC007CF961 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		A04114B12B0232F5000186F9 /* Foodier! Restaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Foodier! Restaurant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04114B42B0232F5000186F9 /* Foodier__RestaurantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foodier__RestaurantApp.swift; sourceTree = "<group>"; };
 		A04114B62B0232F5000186F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				A041153B2B023A76000186F9 /* HomeView.swift */,
 				A0930E1E2B061B3300AF5645 /* OurItemView.swift */,
 				A0930E242B06410300AF5645 /* AddItemView.swift */,
+				A0234CE22B0FACDC007CF961 /* ItemDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0234CE32B0FACDC007CF961 /* ItemDetailView.swift in Sources */,
 				A0930E192B06123E00AF5645 /* Fooditem.swift in Sources */,
 				A0930E252B06410300AF5645 /* AddItemView.swift in Sources */,
 				A041153E2B023C0C000186F9 /* Restaurant.swift in Sources */,

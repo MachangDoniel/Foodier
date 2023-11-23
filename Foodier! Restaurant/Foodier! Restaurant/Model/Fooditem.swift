@@ -15,6 +15,7 @@ struct FoodItem: Identifiable, Encodable, Decodable {
     var descrip: String
     var stars: Int
     var price: Double
+    
 }
 
 // Sample data

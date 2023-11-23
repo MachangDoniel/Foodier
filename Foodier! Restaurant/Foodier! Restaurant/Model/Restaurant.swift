@@ -8,9 +8,9 @@
 import Foundation
 
 struct Restaurant: Identifiable, Codable {
-    let id: String
-    let full_name: String
-    let email: String
+    var id: String
+    var full_name: String
+    var email: String
 //    let image:
     
     var initials: String {

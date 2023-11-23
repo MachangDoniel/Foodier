@@ -1,8 +1,9 @@
 //
-//  OutItemView.swift
+//  Restaurant.swift
 //  Foodier! Restaurant
 //
-//  Created by Biduit on 16/11/23.
+//  Created by Biduit on 13/11/23.
+//
 
 import SwiftUI
 import Firebase
@@ -60,7 +61,9 @@ struct OurItemView: View {
                 print("Error getting documents: \(error)")
             } else {
                 items = querySnapshot?.documents.compactMap { document in
-                    try? document.data(as: FoodItem.self)
+                                var foodItem = try? document.data(as: FoodItem.self)
+                                foodItem?.id = document.documentID // Set the document ID as the item ID
+                                return foodItem
                 } ?? []
 
                 // Explicitly request a UI update on the main thread
@@ -75,22 +78,48 @@ struct OurItemView: View {
 
 
 struct CardView: View {
+    @State private var isDetailViewPresented = false
     var item: FoodItem
 
     var body: some View {
         VStack(spacing: 8) {
-            // Card content (customize as needed)
             Text(item.title)
                 .font(.headline)
                 .padding(.bottom, 5)
 
-            Image(item.image)
-                .resizable()
-                .aspectRatio(contentMode: .fit) // Adjusted aspect ratio
-                .frame(height: 150)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
-                .padding(.bottom, 5)
+            Button(action: {
+                isDetailViewPresented.toggle()
+            }) {
+                // Use AsyncImage to load and display the image from the URL
+                AsyncImage(url: URL(string: item.image)) { phase in
+                    switch phase {
+                    case .empty:
+                        ProgressView()
+                            .frame(height: 150)
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 150)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+                            .padding(.bottom, 5)
+                    case .failure:
+                        Image(systemName: "photo")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 150)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+                            .padding(.bottom, 5)
+                    @unknown default:
+                        fatalError()
+                    }
+                }
+            }
+            .fullScreenCover(isPresented: $isDetailViewPresented) {
+                ItemDetailView(item: item)
+            }
 
             Text(item.descrip)
                 .font(.caption)

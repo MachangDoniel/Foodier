@@ -24,7 +24,7 @@ struct OurItemView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Our Items")
+                Text("Available Restaurants \n\t\t\t  & Items !")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding()

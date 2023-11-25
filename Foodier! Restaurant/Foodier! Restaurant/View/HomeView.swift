@@ -30,13 +30,21 @@ struct HomeView: View {
                 
             }.tag(2)
             
-            ProfileView().tabItem {
+            OrderView().tabItem {
+                VStack {
+                    Image(systemName: "tray.full.fill")
+                    Text("My Orders")
+                }
+                
+            }.tag(3)
+            
+            MyKitchenView().tabItem {
                 VStack {
                     Image(systemName: "person.fill")
                     Text("My Kitchen")
                 }
                 
-            }.tag(3)
+            }.tag(4)
             
         }
         .accentColor(.red)

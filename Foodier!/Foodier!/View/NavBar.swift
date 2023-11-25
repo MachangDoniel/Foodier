@@ -24,7 +24,7 @@ struct NavBar: View {
                 
             }.tag(1)
             
-            CheckOut().tabItem {
+            MyOrderView().tabItem {
                 VStack {
                     Image(systemName: "cart.fill")
                     Text("Cart")

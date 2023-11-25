@@ -1,215 +1,155 @@
 //
-//  HomeView.swift
-//  Food
+//  Restaurant.swift
+//  Foodier! Restaurant
 //
-//  Created by BqNqNNN on 7/12/20.
+//  Created by Biduit on 13/11/23.
 //
 
 import SwiftUI
+import Firebase
+import FirebaseFirestoreSwift
 
 struct HomeView: View {
-    @State var hero = false
-    @State var data = TrendingCard
+    @State private var searchText = ""
+    @State private var items: [FoodItem] = []
+
+    var filteredItems: [FoodItem] {
+        if searchText.isEmpty {
+            return items
+        } else {
+            return items.filter { $0.title.lowercased().contains(searchText.lowercased()) }
+        }
+    }
+
     var body: some View {
-        VStack {
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack {
-                    SearchBar()
-                    
-                    //TrendingWeek
-                    VStack{
-                        HStack {
-                            Text("Trending this week")
-                                .bold()
-                                .multilineTextAlignment(.trailing)
-                                .padding(.leading, 20)
-                            
-                            Spacer()
-                            Text("View all >")
-                                .multilineTextAlignment(.leading)
-                                .foregroundColor(Color(#colorLiteral(red: 0.9580881, green: 0.10593573, blue: 0.3403331637, alpha: 1)))
-                                .padding(.trailing, 20)
+        NavigationView {
+            VStack {
+                Text("Available Restaurants & Items! Just Tap & Order!")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding()
+                    .foregroundColor(.primary)
+                    .lineLimit(nil)
+                    .padding(.bottom, 10)
+                    .shadow(radius: 5)
+
+
+                // Search Bar
+                SearchBar(text: $searchText)
+
+                // Display Cards
+                ScrollView {
+                    LazyVGrid(columns: [
+                        GridItem(.flexible(), spacing: 16),
+                        GridItem(.flexible(), spacing: 16)
+                    ], spacing: 20) { // Increase the spacing value as needed
+                        ForEach(filteredItems.indices, id: \.self) { index in
+                            CardView(item: filteredItems[index])
+                                .frame(width: 150, height: 250) // Adjust the size as needed
                         }
-                        // Card View
-                        
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(TrendingCard) { card in
-                                    NavigationLink(
-                                        destination: Meal(meal :card),
-                                        label: {
-                                            TrendingWeek(trendingMeal: card)
-                                                .background(Color.white)
-                                                .cornerRadius(15)
-                                                .shadow(radius: 1)
-                                        })
-                                        .buttonStyle(PlainButtonStyle())
-                                }
-                                .padding(.bottom, 10)
-                                .padding(.leading, 30)
-                                
-                            }
-                        }
-                    }.padding(.top, -50)
-                    .opacity(self.hero ? 0 : 1)
-                    
-                    
-                    //Categories
-                    VStack{
-                        HStack {
-                            Text("Categories")
-                                .bold()
-                                .multilineTextAlignment(.trailing)
-                                .padding(.leading, 20)
-                            
-                            Spacer()
-                        }
-                        // Categories View
-                        HStack(spacing: 10) {
-                            ForEach(1 ..< 5) { i in
-                                VStack {
-                                    Image("categ-\(String(i))")
-                                    Text(FoodTypes[Int(i)-1])
-                                        .font(.subheadline)
-                                        .bold()
-                                }
-                                .frame(width: 80, height: 100, alignment: .center)
-                                .background(Color.white)
-                                .cornerRadius(15)
-                            }
-                        }
-                        
-                        HStack(spacing: 10) {
-                            ForEach(3 ..< 7) { i in
-                                VStack {
-                                    Image("categ-\(String(i))")
-                                    Text(FoodTypes[Int(i)-1])
-                                        .font(.subheadline)
-                                        .bold()
-                                }
-                                .frame(width: 80, height: 100, alignment: .center)
-                                .background(Color.white)
-                                .cornerRadius(15)
-                            }
-                        }
-                        
+                        .padding()
                     }
-                    .shadow(radius: 1)
-                    .opacity(self.hero ? 0 : 1)
-                    
-                    //Our picks
-                    VStack{
-                        HStack {
-                            Text("Our picks")
-                                .bold()
-                                .multilineTextAlignment(.trailing)
-                                .padding(.leading, 20)
-                            
-                            Spacer()
-                            Text("View all >")
-                                .multilineTextAlignment(.leading)
-                                .foregroundColor(Color(#colorLiteral(red: 0.9580881, green: 0.10593573, blue: 0.3403331637, alpha: 1)))
-                                .padding(.trailing, 20)
-                        }
-                        .opacity(self.hero ? 0 : 1)
-                        
-                        
-                        // Card View
-                        VStack(spacing: 100) {
-                            ForEach(0..<self.data.count){i in
-                                GeometryReader{g in
-                                    OurPicks(card: self.$data[i], hero: self.$hero)
-                                        
-                                        .offset(y: self.data[i].expand ? -g.frame(in: .global).minY : 0)
-                                        .opacity(self.hero ? (self.data[i].expand ? 1 : 0) : 1)
-                                        .onTapGesture {
-                                            
-                                            withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.8, blendDuration: 0)){
-                                                if !self.data[i].expand{
-                                                    self.hero.toggle()
-                                                    self.data[i].expand.toggle()
-                                                }
-                                            }
-                                            
-                                        }
-                                    
-                                }
-                                // going to increase height based on expand...
-                                .frame(height: self.data[i].expand ? UIScreen.main.bounds.height : 250)
-                                .simultaneousGesture(DragGesture(minimumDistance: self.data[i].expand ? 0 : 800).onChanged({ (_) in
-                                    
-                                    print("dragging")
-                                }))
-                            }
-                            
-                            
-                        }
-                        
-                    }.padding(.top, 50)
-                    .padding(.bottom, 150)
-                    
-                    Spacer()
-                    
-                    
+                    .padding()
                 }
-                .background(Color(#colorLiteral(red: 0.9843164086, green: 0.9843164086, blue: 0.9843164086, alpha: 1)))
-                
+
             }
-            .background(Color(#colorLiteral(red: 0.9580881, green: 0.10593573, blue: 0.3403331637, alpha: 1)))
-            .edgesIgnoringSafeArea(.top)
-            
-            
+            .onAppear {
+                fetchDataFromFirestore()
+            }
+        }
+    }
+
+    private func fetchDataFromFirestore() {
+        let db = Firestore.firestore()
+        db.collection("foodItems").addSnapshotListener { querySnapshot, error in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                items = querySnapshot?.documents.compactMap { document in
+                                var foodItem = try? document.data(as: FoodItem.self)
+                                foodItem?.id = document.documentID // Set the document ID as the item ID
+                                return foodItem
+                } ?? []
+
+                // Explicitly request a UI update on the main thread
+                DispatchQueue.main.async {
+                    // This ensures the UI updates when the data changes
+                    // without relying on automatic SwiftUI updates
+                }
+            }
         }
     }
 }
+
+
+struct CardView: View {
+    @State private var isDetailViewPresented = false
+    var item: FoodItem
+
+    var body: some View {
+        VStack(spacing: 8) {
+            Text(item.title)
+                .font(.headline)
+                .padding(.bottom, 5)
+
+            Button(action: {
+                isDetailViewPresented.toggle()
+            }) {
+                // Use AsyncImage to load and display the image from the URL
+                AsyncImage(url: URL(string: item.image)) { phase in
+                    switch phase {
+                    case .empty:
+                        ProgressView()
+                            .frame(height: 150)
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 150)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+                            .padding(.bottom, 5)
+                    case .failure:
+                        Image(systemName: "photo")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 150)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+                            .padding(.bottom, 5)
+                    @unknown default:
+                        fatalError()
+                    }
+                }
+            }
+            .fullScreenCover(isPresented: $isDetailViewPresented) {
+                ItemDetailView(item: item)
+            }
+
+            Text(item.descrip)
+                .font(.caption)
+                .foregroundColor(.gray)
+                .padding(.bottom, 5)
+
+            HStack {
+                Text("Stars: \(item.stars)")
+                Spacer()
+                Text(String(format: "$%.2f", item.price))
+            }
+            .font(.caption)
+        }
+        .padding()
+        .background(Color.white)
+        .cornerRadius(10)
+        .shadow(radius: 5)
+        .padding(.bottom, 10)
+    }
+}
+
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-    }
-}
-
-
-struct SearchBar: View {
-    @State var search = ""
-    var body: some View {
-        ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.9580881, green: 0.10593573, blue: 0.3403331637, alpha: 1)), Color(#colorLiteral(red: 0.9843164086, green: 0.9843164086, blue: 0.9843164086, alpha: 1))]), startPoint: .top, endPoint: .bottom)
-                .frame(width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height)*0.25, alignment: .center)
-                .edgesIgnoringSafeArea(.all)
-            
-            
-            VStack {
-                HStack {
-                    Text("Browse")
-                        .bold()
-                        .font(.title)
-                        .multilineTextAlignment(.trailing)
-                        .foregroundColor(.white)
-                        .padding(.leading, 20)
-                        .padding(.top, -40)
-                    Spacer()
-                    Text("Filter")
-                        .font(.title2)
-                        .multilineTextAlignment(.leading)
-                        .foregroundColor(.white)
-                        .padding(.trailing, 20)
-                        .padding(.top, -30)
-                }
-                HStack {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(.gray)
-                        .font(.title)
-                    TextField("Search...", text: $search)
-                        
-                        .font(.title3)
-                }
-                .frame(width:  ( UIScreen.main.bounds.width)*0.85, height: 40, alignment: .leading)
-                .padding(.leading, 20)
-                .background(Color.white)
-                .cornerRadius(10)
-                
-            }
-        }
     }
 }

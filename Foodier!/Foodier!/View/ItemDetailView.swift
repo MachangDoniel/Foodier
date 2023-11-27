@@ -12,12 +12,14 @@ import CoreLocation
 struct ItemDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     var item: FoodItem
+    var selectedAddress: String?
     @State private var restaurantName: String = ""
     @State private var location: String = ""
     @State private var contactNumber: String = ""
     @State private var quantityValue: Int = 0
     @State private var restoID: String = ""
     @State private var isShowingConfirmation = false
+    @State private var isFavorite = false
 
     var body: some View {
         NavigationView {
@@ -52,16 +54,25 @@ struct ItemDetailView: View {
                         .padding()
 
                     HStack {
-                        Text("Stars: \(item.stars)")
+                        Text(String(format: "৳%.2f", item.price))
                         Spacer()
-                        Text(String(format: "$%.2f", item.price))
+
+                        Button(action: {
+                                                    isFavorite.toggle()
+                                                    updateFavoriteStatus()
+                                                }) {
+                                                    Image(systemName: isFavorite ? "heart.fill" : "heart")
+                                                        .font(.title)
+                                                        .foregroundColor(.red)
+                                                }
+
                     }
                     .font(.caption)
-                    .padding()
+
+
 
                     Text("Restaurant: \(restaurantName)")
                         .font(.headline)
-                        .padding()
 
                     HStack {
                         Button(action: {
@@ -70,15 +81,13 @@ struct ItemDetailView: View {
                             Image(systemName: "minus.circle")
                                 .imageScale(.large)
                         }
-                        .padding()
 
-                        Text("Cart")
+                        Text("Add to Cart")
                             .font(.headline)
                             .padding()
-                            .background(Color.blue)
+                            .background(Color.green)
                             .foregroundColor(.white)
                             .cornerRadius(10)
-                        .padding()
 
                         Button(action: {
                             quantityValue += 1
@@ -86,21 +95,22 @@ struct ItemDetailView: View {
                             Image(systemName: "plus.circle")
                                 .imageScale(.large)
                         }
-                        .padding()
                     }
-                    .padding()
 
                     TextField("Quantity", value: $quantityValue, formatter: NumberFormatter())
                         .keyboardType(.numberPad)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
 
-                    TextField("Contact Number", text: $contactNumber)
-                        .keyboardType(.numberPad)
+                    TextField("Location", text: $location)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
+                        .onAppear {
+                            location = selectedAddress ?? ""
+                        }
 
-                    TextField("Location", text: $location)
+                    TextField("Contact Number", text: $contactNumber)
+                        .keyboardType(.numberPad)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
 
@@ -112,13 +122,12 @@ struct ItemDetailView: View {
                     .background(Color.blue)
                     .cornerRadius(10)
                     .padding()
-                    .alert(isPresented: $isShowingConfirmation) {
-                        Alert(title: Text("Order Placed"), message: Text("Your order has been successfully placed."), dismissButton: .default(Text("OK")))
-                    }
+
                 }
                 .onAppear {
                     fetchRestaurantName()
                     setLocationAddress()
+                    checkFavoriteStatus()
                 }
                 .navigationBarItems(leading: backButton)
                 .navigationBarTitle(Text(item.title), displayMode: .inline)
@@ -182,10 +191,10 @@ struct ItemDetailView: View {
             } else {
                 if let foodItemData = document?.data(),
                    let restoID = foodItemData["id"] as? String {
-                    
+
                     self.restoID = restoID
                     let restaurantDocRef = db.collection("restaurants").document(restoID)
-                    
+
                     restaurantDocRef.getDocument { restaurantDocument, restaurantError in
                         if let restaurantError = restaurantError {
                             print("Error getting restaurant document: \(restaurantError)")
@@ -233,13 +242,61 @@ struct ItemDetailView: View {
                     }
                     addressString += country
                 }
-                // Add more components as needed
-
                 location = addressString
             }
         }
     }
+
+    private func checkFavoriteStatus() {
+        guard let user = Auth.auth().currentUser else {
+            print("User not logged in")
+            return
+        }
+
+        let db = Firestore.firestore()
+        let favoritesRef = db.collection("favourites").document(user.uid)
+
+        favoritesRef.getDocument { document, error in
+            if let error = error {
+                print("Error checking favorite status: \(error)")
+            } else {
+                if let data = document?.data(),
+                   let favorites = data["favorites"] as? [String],
+                   favorites.contains(item.id) {
+                    isFavorite = true
+                }
+            }
+        }
+    }
+
+    private func updateFavoriteStatus() {
+        guard let user = Auth.auth().currentUser else {
+            print("User not logged in")
+            return
+        }
+
+        let db = Firestore.firestore()
+        let favoritesRef = db.collection("favourites").document(user.uid)
+
+        favoritesRef.getDocument { document, error in
+            if let error = error {
+                print("Error updating favorite status: \(error)")
+            } else {
+                var favorites = document?.data()?["favorites"] as? [String] ?? []
+
+                if isFavorite {
+                    favorites.append(item.id)
+                } else {
+                    favorites.removeAll { $0 == item.id }
+                }
+
+                favoritesRef.setData(["favorites": favorites])
+            }
+        }
+    }
 }
+
+
 
 struct ItemDetailView_Previews: PreviewProvider {
     static var previews: some View {

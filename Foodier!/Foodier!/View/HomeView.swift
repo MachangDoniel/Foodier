@@ -29,49 +29,49 @@ struct HomeView: View {
         NavigationView {
             VStack {
                 HStack {
-                                    Text("Available Items!")
-                                        .font(.title)
-                                        .fontWeight(.bold)
-                                        .padding()
-                                        .foregroundColor(.primary)
-                                        .lineLimit(nil)
-                                        .shadow(radius: 5)
-                                }
+                    Text("Available Items!")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding()
+                        .foregroundColor(.primary)
+                        .lineLimit(nil)
+                        .shadow(radius: 5)
+                }
 
-                                HStack {
-                                    Button(action: {
-                                        isShowingMapView = true
-                                    }) {
-                                        Image(systemName: "location.fill")
-                                            .font(.system(size: 15))
-                                            .foregroundColor(.blue)
-                                    }
-                                    .fullScreenCover(isPresented: $isShowingMapView) {
-                                        MapView(selectedLocation: $selectedLocation) { location, address in
-                                            // Handle the selected location and address
-                                            selectedLocation = location
-                                            selectedAddress = address
-                                            isShowingMapView = false
-                                        }
-                                        .edgesIgnoringSafeArea(.all)
-                                    }
+                HStack {
+                    Button(action: {
+                        isShowingMapView = true
+                    }) {
+                        Image(systemName: "location.fill")
+                            .font(.system(size: 15))
+                            .foregroundColor(.blue)
+                    }
+                    .fullScreenCover(isPresented: $isShowingMapView) {
+                        MapView(selectedLocation: $selectedLocation) { location, address in
+                            // Handle the selected location and address
+                            selectedLocation = location
+                            selectedAddress = address
+                            isShowingMapView = false
+                        }
+                        .edgesIgnoringSafeArea(.all)
+                    }
 
-                                    if let selectedAddress = selectedAddress {
-                                        Text("Selected: \(selectedAddress)")
-                                            .font(.system(size: 12))
-                                            .foregroundColor(.primary)
-                                            .lineLimit(nil)
-                                            .background(Color.green)
-                                            .cornerRadius(8)
-                                    } else {
-                                        Text("Not selected")
-                                            .font(.system(size: 12))
-                                            .padding()
-                                            .foregroundColor(.primary)
-                                            .lineLimit(nil)
-                                            .cornerRadius(8)
-                                    }
-                                }
+                    if let selectedAddress = selectedAddress {
+                        Text("Selected: \(selectedAddress)")
+                            .font(.system(size: 12))
+                            .foregroundColor(.primary)
+                            .lineLimit(nil)
+                            .background(Color.green)
+                            .cornerRadius(8)
+                    } else {
+                        Text("Not selected")
+                            .font(.system(size: 12))
+                            .padding()
+                            .foregroundColor(.primary)
+                            .lineLimit(nil)
+                            .cornerRadius(8)
+                    }
+                }
                 // Search Bar
                 SearchBar(text: $searchText)
 
@@ -82,10 +82,12 @@ struct HomeView: View {
                         GridItem(.flexible(), spacing: 16)
                     ], spacing: 20) { // Increase the spacing value as needed
                         ForEach(filteredItems.indices, id: \.self) { index in
-                            CardView(item: filteredItems[index])
+                            let selectedItem = filteredItems[index]
+                            CardView(item: selectedItem, selectedAddress: selectedAddress)
                                 .frame(width: 150, height: 250) // Adjust the size as needed
                         }
                         .padding()
+
                     }
                     .padding()
                 }
@@ -147,6 +149,7 @@ struct HomeView: View {
 struct CardView: View {
     @State private var isDetailViewPresented = false
     var item: FoodItem
+    var selectedAddress: String?
 
     var body: some View {
         VStack(spacing: 8) {
@@ -156,6 +159,8 @@ struct CardView: View {
 
             Button(action: {
                 isDetailViewPresented.toggle()
+                // Print selectedAddress when the button is tapped
+                print("Selected Address in CardView: \(selectedAddress ?? "Not available")")
             }) {
                 // Use AsyncImage to load and display the image from the URL
                 AsyncImage(url: URL(string: item.image)) { phase in
@@ -185,7 +190,7 @@ struct CardView: View {
                 }
             }
             .fullScreenCover(isPresented: $isDetailViewPresented) {
-                ItemDetailView(item: item)
+                ItemDetailView(item: item, selectedAddress: selectedAddress)
             }
 
             Text(item.descrip)
@@ -199,6 +204,13 @@ struct CardView: View {
                 Text(String(format: "$%.2f", item.price))
             }
             .font(.caption)
+
+//            if let selectedAddress = selectedAddress {
+//                Text("Selected Address: \(selectedAddress)")
+//                    .font(.caption)
+//                    .foregroundColor(.blue)
+//                    .padding(.bottom, 5)
+//            }
         }
         .padding()
         .background(Color.white)
@@ -207,6 +219,7 @@ struct CardView: View {
         .padding(.bottom, 10)
     }
 }
+
 
 
 

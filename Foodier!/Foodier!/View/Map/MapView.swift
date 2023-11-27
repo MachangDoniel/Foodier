@@ -19,6 +19,7 @@ struct MapView: View {
 
     // Closure to notify the parent view about the selected location and address
     var onLocationSelected: ((CLLocation?, String) -> Void)?
+    @State private var isLocationAlertPresented = false
 
     var body: some View {
         VStack {
@@ -43,18 +44,19 @@ struct MapView: View {
 
 
             Button("Use Current Location") {
-                selectedLocation = LocationManager.shared.location
-
-                if let location = selectedLocation {
+                if let location = LocationManager.shared.location {
                     print("Selected Location: \(location.coordinate.latitude), \(location.coordinate.longitude)")
+
+                    selectedLocation = location
+
+                    // Get the address for the current location
+                    getAddress(for: selectedLocation) { address in
+                        // Notify the parent view about the selected location and address
+                        onLocationSelected?(selectedLocation, address)
+                    }
                 } else {
                     print("Current location not available.")
-                }
-
-                // Get the address for the current location
-                getAddress(for: selectedLocation) { address in
-                    // Notify the parent view about the selected location and address
-                    onLocationSelected?(selectedLocation, address)
+                    isLocationAlertPresented = true
                 }
             }
             .padding()
@@ -63,13 +65,18 @@ struct MapView: View {
             .cornerRadius(10)
 
             Button("Choose Another Location") {
-                // Implement logic to choose another location
-                // You can use another view or alert to get user input for the location
             }
             .padding()
             .foregroundColor(.white)
             .background(Color.green)
             .cornerRadius(10)
+        }
+        .alert(isPresented: $isLocationAlertPresented) {
+            Alert(
+                title: Text("Location Services Disabled"),
+                message: Text("Please turn on your device's location services in Settings."),
+                dismissButton: .default(Text("OK"))
+            )
         }
     }
 

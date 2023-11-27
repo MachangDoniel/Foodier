@@ -1,5 +1,5 @@
 //
-//  Restaurant.swift
+//  ItemDetailView.swift
 //  Foodier! Restaurant
 //
 //  Created by Biduit on 13/11/23.
@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import CoreLocation
 
 struct ItemDetailView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -14,97 +15,115 @@ struct ItemDetailView: View {
     @State private var restaurantName: String = ""
     @State private var location: String = ""
     @State private var contactNumber: String = ""
-    @State private var quantity: String = ""
+    @State private var quantityValue: Int = 0
     @State private var restoID: String = ""
     @State private var isShowingConfirmation = false
 
     var body: some View {
         NavigationView {
-            VStack {
-                Text(item.title)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
+            ScrollView {
+                VStack {
+                    AsyncImage(url: URL(string: item.image)) { phase in
+                        switch phase {
+                        case .empty:
+                            ProgressView()
+                                .frame(height: 250)
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(height: 250)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+                        case .failure:
+                            Image(systemName: "photo")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(height: 250)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+                        @unknown default:
+                            fatalError()
+                        }
+                    }
+
+                    Text(item.descrip)
+                        .font(.body)
+                        .padding()
+
+                    HStack {
+                        Text("Stars: \(item.stars)")
+                        Spacer()
+                        Text(String(format: "$%.2f", item.price))
+                    }
+                    .font(.caption)
                     .padding()
 
-                // Display item details
-                AsyncImage(url: URL(string: item.image)) { phase in
-                    switch phase {
-                    case .empty:
-                        ProgressView()
-                            .frame(height: 250)
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 250)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
-                            .padding(.bottom, 10)
-                    case .failure:
-                        Image(systemName: "photo")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 250)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
-                            .padding(.bottom, 10)
-                    @unknown default:
-                        fatalError()
+                    Text("Restaurant: \(restaurantName)")
+                        .font(.headline)
+                        .padding()
+
+                    HStack {
+                        Button(action: {
+                            quantityValue = max(quantityValue - 1, 0)
+                        }) {
+                            Image(systemName: "minus.circle")
+                                .imageScale(.large)
+                        }
+                        .padding()
+
+                        Text("Cart")
+                            .font(.headline)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                        .padding()
+
+                        Button(action: {
+                            quantityValue += 1
+                        }) {
+                            Image(systemName: "plus.circle")
+                                .imageScale(.large)
+                        }
+                        .padding()
+                    }
+                    .padding()
+
+                    TextField("Quantity", value: $quantityValue, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+
+                    TextField("Contact Number", text: $contactNumber)
+                        .keyboardType(.numberPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+
+                    TextField("Location", text: $location)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+
+                    Button("Place Order") {
+                        createOrder()
+                    }
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    .padding()
+                    .alert(isPresented: $isShowingConfirmation) {
+                        Alert(title: Text("Order Placed"), message: Text("Your order has been successfully placed."), dismissButton: .default(Text("OK")))
                     }
                 }
-
-                Text(item.descrip)
-                    .font(.body)
-                    .padding()
-
-                HStack {
-                    Text("Stars: \(item.stars)")
-                    Spacer()
-                    Text(String(format: "$%.2f", item.price))
+                .onAppear {
+                    fetchRestaurantName()
+                    setLocationAddress()
                 }
-                .font(.caption)
+                .navigationBarItems(leading: backButton)
+                .navigationBarTitle(Text(item.title), displayMode: .inline)
                 .padding()
-                
-                Text("Restaurant: \(restaurantName)")
-                    .font(.headline)
-                    .padding()
-                
-                // User input fields
-                TextField("Location", text: $location)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-
-                TextField("Contact Number", text: $contactNumber)
-                    .keyboardType(.numberPad)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-
-                TextField("Quantity", text: $quantity)
-                    .keyboardType(.numberPad)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-
-                // Place Order button
-                Button("Place Order") {
-                    createOrder()
-                }
-                .padding()
-                .foregroundColor(.white)
-                .background(Color.blue)
-                .cornerRadius(10)
-                .padding()
-                .alert(isPresented: $isShowingConfirmation) {
-                       Alert(title: Text("Order Placed"), message: Text("Your order has been successfully placed."), dismissButton: .default(Text("OK")))
-                   }
-
-
-                Spacer()
             }
-            .onAppear {
-                fetchRestaurantName()
-            }
-            .navigationBarItems(leading: backButton)
-            .navigationBarTitle(Text(item.title), displayMode: .inline)
         }
     }
 
@@ -130,36 +149,31 @@ struct ItemDetailView: View {
             food_id: item.id,
             location: location,
             contact_no: contactNumber,
-            quantity: Int(quantity) ?? 0,
+            quantity: quantityValue,
             status: 1
         )
 
         let db = Firestore.firestore()
-        
+
         do {
             let documentReference = try db.collection("orders").addDocument(from: order)
             let generatedID = documentReference.documentID
-            
-            // Update the order with the generated ID
+
             order.id = generatedID
-            
-            // Update the document with the generated ID
             try db.collection("orders").document(generatedID).setData(from: order)
-            
+
             print("Order placed successfully! Generated ID: \(generatedID)")
             isShowingConfirmation = true
+
+            presentationMode.wrappedValue.dismiss()
         } catch let error {
             print("Error placing order: \(error.localizedDescription)")
         }
     }
 
-    
-    
-    
     private func fetchRestaurantName() {
         let db = Firestore.firestore()
 
-        // Assuming item.id represents the ID of the document in "foodItems"
         let foodItemDocRef = db.collection("foodItems").document(item.id)
 
         foodItemDocRef.getDocument { document, error in
@@ -170,7 +184,6 @@ struct ItemDetailView: View {
                    let restoID = foodItemData["id"] as? String {
                     
                     self.restoID = restoID
-                    // Now fetch the restaurant document using restoID
                     let restaurantDocRef = db.collection("restaurants").document(restoID)
                     
                     restaurantDocRef.getDocument { restaurantDocument, restaurantError in
@@ -191,8 +204,42 @@ struct ItemDetailView: View {
             }
         }
     }
-}
 
+    private func setLocationAddress() {
+        guard let currentLocation = LocationManager.shared.location else {
+            print("Current location not available.")
+            return
+        }
+
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(currentLocation) { placemarks, error in
+            if let error = error {
+                print("Reverse geocoding failed with error: \(error.localizedDescription)")
+            } else if let placemark = placemarks?.first {
+                var addressString = ""
+
+                if let locationName = placemark.name {
+                    addressString += locationName
+                }
+                if let city = placemark.locality {
+                    if !addressString.isEmpty {
+                        addressString += ", "
+                    }
+                    addressString += city
+                }
+                if let country = placemark.country {
+                    if !addressString.isEmpty {
+                        addressString += ", "
+                    }
+                    addressString += country
+                }
+                // Add more components as needed
+
+                location = addressString
+            }
+        }
+    }
+}
 
 struct ItemDetailView_Previews: PreviewProvider {
     static var previews: some View {
@@ -201,9 +248,3 @@ struct ItemDetailView_Previews: PreviewProvider {
         return ItemDetailView(item: sampleFoodItem)
     }
 }
-
-
-
-
-
-

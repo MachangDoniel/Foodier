@@ -24,7 +24,7 @@ struct LoginView: View {
             }
             VStack {
                 // Image
-                Image("foodier")
+                Image("signin")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 200, height: 260)

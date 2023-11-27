@@ -40,7 +40,7 @@ struct NavBar: View {
                 
             }.tag(3)
             
-            SettingsView().tabItem {
+            ProfileView().tabItem {
                 VStack {
                     Image(systemName: "gearshape.fill")
                     Text("Settings")

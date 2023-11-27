@@ -1,117 +1,144 @@
 //
 //  ProfileView.swift
-//  Foodier! Restaurant
+//  Foodier!
 //
-//  Created by Biduit on 13/11/23.
+//  Created by Biduit on 11/11/23.
 //
 
 import SwiftUI
 
 struct ProfileView: View {
     @EnvironmentObject var viewModel: AuthViewModel
-    @State private var isMenuVisible = false
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
-        NavigationView {
-            ZStack(alignment: .leading) {
-                VStack {
-                    HStack {
-                        Button(action: {
-                            withAnimation {
-                                isMenuVisible.toggle()
-                            }
-                        }) {
-                            Image(systemName: "line.horizontal.3")
-                                .imageScale(.large)
-                                .padding()
-                        }
+        if let user = viewModel.currentUser {
+            NavigationView {
+                List {
+                    Section {
+                        HStack {
+                            Text(user.initials)
+                                .font(.title)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                                .frame(width: 72, height: 72)
+                                .background(Color(.systemGray3))
+                                .clipShape(Circle())
 
-                        Spacer()
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(user.full_name)
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .padding(.top, 4)
+
+                                Text(user.email)
+                                    .font(.footnote)
+                                    .foregroundColor(.gray)
+                            }
+                        }
                     }
-                    .background(.white)
-                    .foregroundColor(.black)
 
-                    Spacer()
+                    Section("General") {
+                        HStack {
+                            SettingsRowView(imageName: "gear", title: "Version", tintColor: Color(.systemGray))
+
+                            Spacer()
+
+                            Text("1.0.0")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
+                    }
+
+                    Section("Account") {
+                        Button {
+                            viewModel.signOut()
+                        } label: {
+                            SettingsRowView(imageName: "arrow.left.circle.fill", title: "Sign Out", tintColor: .red)
+                        }
+
+                        // Add more buttons if needed
+                    }
                 }
+                .navigationBarTitle("Profile", displayMode: .inline)
+                .navigationBarItems(
+                    leading: Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .imageScale(.large)
+                            .foregroundColor(.accentColor)
+                    }
+                )
+            }
+            .navigationBarBackButtonHidden(true)
+        } else {
+            NavigationView {
+                List {
+                    Section {
+                        HStack {
+                            Text(Restaurant.mock_user.initials)
+                                .font(.title)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                                .frame(width: 72, height: 72)
+                                .background(Color(.systemGray3))
+                                .clipShape(Circle())
 
-                if isMenuVisible {
-                    SideMenuBarView(isMenuVisible: $isMenuVisible)
-                        .frame(width: UIScreen.main.bounds.width * 3 / 5, height: UIScreen.main.bounds.height - 20)
-                        .background(Color.white)
-                        .edgesIgnoringSafeArea(.all)
-                        .onTapGesture {
-                            withAnimation {
-                                isMenuVisible.toggle()
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(Restaurant.mock_user.full_name)
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .padding(.top, 4)
+
+                                Text(Restaurant.mock_user.email)
+                                    .font(.footnote)
+                                    .foregroundColor(.gray)
                             }
                         }
+                    }
+
+                    Section("General") {
+                        HStack {
+                            SettingsRowView(imageName: "gear", title: "Version", tintColor: Color(.systemGray))
+
+                            Spacer()
+
+                            Text("1.0.0")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
+                    }
+
+                    Section("Account") {
+                        Button {
+                            viewModel.signOut()
+                        } label: {
+                            SettingsRowView(imageName: "arrow.left.circle.fill", title: "Sign Out", tintColor: .red)
+                        }
+
+                        // Add more buttons if needed
+                    }
                 }
+                .navigationBarTitle("Profile", displayMode: .inline)
+                .navigationBarItems(
+                    leading: Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .imageScale(.large)
+                            .foregroundColor(.accentColor)
+                    }
+                )
             }
-            .background(Color.white)
-            .onTapGesture {
-                // Close the sidebar when tapping outside of it
-                withAnimation {
-                    isMenuVisible = false
-                }
-            }
+            .navigationBarBackButtonHidden(true)
         }
-    }
-}
-
-struct SideMenuBarView: View {
-    @EnvironmentObject var viewModel: AuthViewModel
-    @Binding var isMenuVisible: Bool
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            Text("Menu")
-                .font(.title)
-                .foregroundColor(.black)
-                .padding(.top, 20)
-                .padding(.leading, 20)
-
-            Button {
-                viewModel.signOut()
-            } label: {
-                HStack {
-                    Image(systemName: "arrow.left.circle.fill")
-                        .foregroundColor(.red)
-                    Text("Sign Out")
-                        .foregroundColor(.black)
-                }
-                .padding(.leading, 20)
-                .padding(.top, 50)
-            }
-
-            Spacer()
-        }
-        .frame(width: UIScreen.main.bounds.width * 3 / 5, height: UIScreen.main.bounds.height - 20, alignment: .leading)
-        .background(Color(white: 0.80))
-        .edgesIgnoringSafeArea(.all)
-    }
-}
-
-struct Card: View {
-    var title: String
-    var cardColor: Color
-
-    var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10)
-                .fill(cardColor)
-                .shadow(radius: 5)
-
-            Text(title)
-                .font(.title)
-                .foregroundColor(.white)
-        }
-        .frame(height: 150)
-        .padding(.horizontal)
-        .padding(.vertical, 10)
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+            .environmentObject(AuthViewModel())
     }
 }

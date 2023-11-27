@@ -5,35 +5,73 @@
 //  Created by Biduit on 13/11/23.
 //
 
+
 import SwiftUI
 import Firebase
-import FirebaseFirestoreSwift
+import CoreLocation
 
 struct HomeView: View {
     @State private var searchText = ""
-    @State private var items: [FoodItem] = []
+        @State private var items: [FoodItem] = []
+        @State private var selectedLocation: CLLocation?
+        @State private var isShowingMapView = false
+        @State private var selectedAddress: String?
 
-    var filteredItems: [FoodItem] {
-        if searchText.isEmpty {
-            return items
-        } else {
-            return items.filter { $0.title.lowercased().contains(searchText.lowercased()) }
+        var filteredItems: [FoodItem] {
+            if searchText.isEmpty {
+                return items
+            } else {
+                return items.filter { $0.title.lowercased().contains(searchText.lowercased()) }
+            }
         }
-    }
 
     var body: some View {
         NavigationView {
             VStack {
-                Text("Available Restaurants & Items! Just Tap & Order!")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding()
-                    .foregroundColor(.primary)
-                    .lineLimit(nil)
-                    .padding(.bottom, 10)
-                    .shadow(radius: 5)
+                HStack {
+                                    Text("Available Items!")
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                        .padding()
+                                        .foregroundColor(.primary)
+                                        .lineLimit(nil)
+                                        .shadow(radius: 5)
+                                }
 
+                                HStack {
+                                    Button(action: {
+                                        isShowingMapView = true
+                                    }) {
+                                        Image(systemName: "location.fill")
+                                            .font(.system(size: 15))
+                                            .foregroundColor(.blue)
+                                    }
+                                    .fullScreenCover(isPresented: $isShowingMapView) {
+                                        MapView(selectedLocation: $selectedLocation) { location, address in
+                                            // Handle the selected location and address
+                                            selectedLocation = location
+                                            selectedAddress = address
+                                            isShowingMapView = false
+                                        }
+                                        .edgesIgnoringSafeArea(.all)
+                                    }
 
+                                    if let selectedAddress = selectedAddress {
+                                        Text("Selected: \(selectedAddress)")
+                                            .font(.system(size: 12))
+                                            .foregroundColor(.primary)
+                                            .lineLimit(nil)
+                                            .background(Color.green)
+                                            .cornerRadius(8)
+                                    } else {
+                                        Text("Not selected")
+                                            .font(.system(size: 12))
+                                            .padding()
+                                            .foregroundColor(.primary)
+                                            .lineLimit(nil)
+                                            .cornerRadius(8)
+                                    }
+                                }
                 // Search Bar
                 SearchBar(text: $searchText)
 
@@ -51,7 +89,6 @@ struct HomeView: View {
                     }
                     .padding()
                 }
-
             }
             .onAppear {
                 fetchDataFromFirestore()
@@ -78,6 +115,31 @@ struct HomeView: View {
                 }
             }
         }
+    }
+
+    private func getAddress(from location: CLLocation) -> String {
+        // Use reverse geocoding to get the address from the location
+        let geocoder = CLGeocoder()
+        var addressString = ""
+
+        geocoder.reverseGeocodeLocation(location) { placemarks, error in
+            if let error = error {
+                print("Reverse geocoding failed with error: \(error.localizedDescription)")
+            } else if let placemark = placemarks?.first {
+                if let city = placemark.locality {
+                    addressString += city
+                }
+                if let country = placemark.country {
+                    if !addressString.isEmpty {
+                        addressString += ", "
+                    }
+                    addressString += country
+                }
+                // Add more components as needed
+            }
+        }
+
+        return addressString
     }
 }
 
@@ -153,3 +215,4 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+

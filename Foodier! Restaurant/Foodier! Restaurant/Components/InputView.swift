@@ -17,25 +17,20 @@ struct InputView: View {
         VStack(alignment: .leading, spacing: 12) {
             Text(title)
                 .foregroundColor(Color(.darkGray))
-                .fontWeight(.semibold)
-                .font(.system(size: 14))
+                .font(.headline)
             
             if isSecureField {
                 SecureField(placeHolder, text: $text)
-                    .font(.system(size: 14))
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.vertical, 10)
-                    .background(Color(.lightGray))
-                    .cornerRadius(8)
+                    .font(.subheadline)
             }
             else {
                 TextField(placeHolder, text: $text)
-                    .font(.system(size: 14))
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.vertical, 10)
-                    .background(Color(.lightGray))
-                    .cornerRadius(8)
+                    .font(.subheadline)
             }
-            
-            Divider()
         }
     }
 }
@@ -43,5 +38,7 @@ struct InputView: View {
 struct InputView_Previews: PreviewProvider {
     static var previews: some View {
         InputView(text: .constant(""), title: "Email Address", placeHolder: "name@example.com")
+            .padding()
+            .previewLayout(.sizeThatFits)
     }
 }

@@ -8,5 +8,8 @@
 	</array>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>Please Allow To Read Location For Delivery</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Your location is needed to provide you with personalized content.</string>
+
 </dict>
 </plist>

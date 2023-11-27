@@ -26,11 +26,13 @@ struct MyKitchenView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("My Kitchen")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding()
-
+                NavigationLink(destination: ProfileView()) {
+                    Text("My Kitchen")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .padding()
+                }
+                .navigationBarBackButtonHidden(true)
                 // Search Bar
                 SearchBar(text: $searchText)
 

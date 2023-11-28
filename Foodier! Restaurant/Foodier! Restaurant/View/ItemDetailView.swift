@@ -56,7 +56,7 @@ struct ItemDetailView: View {
                     .padding()
 
                 HStack {
-                    Text("Stars: \(item.stars)")
+                    Text("\(item.type)")
                     Spacer()
                     Text(String(format: "$%.2f", item.price))
                 }

@@ -14,7 +14,7 @@ struct OrderView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("My Orders")
+                Text("Order Queue")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding()

@@ -28,8 +28,9 @@ struct OrderCardView: View {
                 .font(.headline)
                 .fontWeight(.bold)
 
-            Text("User Name: \(userName)")
+//            Text("User Name: \(userName)")
             Text("Contact Number: \(order.contact_no)")
+            Text("Location: \(order.location)")
             Text("Quantity: \(order.quantity)")
 
             Spacer()

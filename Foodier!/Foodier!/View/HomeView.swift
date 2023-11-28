@@ -14,16 +14,25 @@ struct HomeView: View {
     @State private var searchText = ""
         @State private var items: [FoodItem] = []
         @State private var selectedLocation: CLLocation?
+        @State private var selectedType: String = "X" // Default type
         @State private var isShowingMapView = false
         @State private var selectedAddress: String?
 
-        var filteredItems: [FoodItem] {
-            if searchText.isEmpty {
+    var filteredItems: [FoodItem] {
+        if searchText.isEmpty {
+            if selectedType == "X" {
                 return items
             } else {
+                return items.filter { $0.type == selectedType }
+            }
+        } else {
+            if selectedType == "X" {
                 return items.filter { $0.title.lowercased().contains(searchText.lowercased()) }
+            } else {
+                return items.filter { $0.type == selectedType && $0.title.lowercased().contains(searchText.lowercased()) }
             }
         }
+    }
 
     var body: some View {
         NavigationView {
@@ -75,6 +84,32 @@ struct HomeView: View {
                 // Search Bar
                 SearchBar(text: $searchText)
 
+                // Types Horizontal ScrollView
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 16) {
+                        ForEach(["X","Pizza","Pasta","Burger","Chicken Biriyani","Beef Biriyani","Mutton Biriyani","Chicken Fry","Chicken Wings","Mutton Curry","Sushi","Bekari","Dessert","Pestry","Ice Cream","Nachos","Juices","Coffee","Vegan Food","Asian Cuisine","Itaian Cuisine","Chinese Cuisine","Other"], id: \.self) { type in
+                            Button(action: {
+                                withAnimation {
+                                    selectedType = type
+                                    searchText = "" // Reset search text when a type is selected
+                                }
+                            }) {
+                                Text(type)
+                                    .font(.subheadline)
+                                    .padding(8)
+                                    .foregroundColor(type == selectedType ? .white : .blue)
+                                    .background(type == selectedType ? Color.blue : Color.white)
+                                    .cornerRadius(10)
+                            }
+                        }
+                    }
+                    .padding()
+                }
+                .background(Color.gray.opacity(0.1))
+                .cornerRadius(15)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 10)
+                
                 // Display Cards
                 ScrollView {
                     LazyVGrid(columns: [
@@ -199,7 +234,7 @@ struct CardView: View {
                 .padding(.bottom, 5)
 
             HStack {
-                Text("Stars: \(item.stars)")
+                Text("\(item.type)")
                 Spacer()
                 Text(String(format: "$%.2f", item.price))
             }

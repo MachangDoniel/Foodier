@@ -25,7 +25,7 @@ struct AddItemView: View {
     @Environment(\.presentationMode) var presentationMode
 
     // Define the types you want to show in the Picker
-    let types = ["Fast Food", "Pizza", "Asian Cuisine", "Other"]
+    let types = ["Pizza","Pasta","Burger","Chicken Biriyani","Beef Biriyani","Mutton Biriyani","Chicken Fry","Chicken Wings","Mutton Curry","Sushi","Bekari","Dessert","Pestry","Ice Cream","Nachos","Juices","Coffee","Vegan Food","Asian Cuisine","Itaian Cuisine","Chinese Cuisine","Other"]
 
     var body: some View {
         NavigationView {

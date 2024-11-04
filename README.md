@@ -37,57 +37,50 @@ The **Foodier!** app enables customers to explore a variety of dishes and restau
     <img src="Photos/23splash_screen2.jpg" alt="Splash Screen 2" width="200"/>
     <img src="Photos/24splash_screen3.jpg" alt="Splash Screen 3" width="200"/>
     <img src="Photos/25splash_screen4.jpg" alt="Splash Screen 4" width="200"/>
-    <p><em>Figure 1: Splash Screen
-</em></p>
+    <p><em>Figure 1: Splash Screen</em></p>
 </div>
 
 <div align="center">
     <img src="Photos/26signin.jpg" alt="Sign In 1" width="200"/>
     <img src="Photos/28signin2.jpg" alt="Sign In 2" width="200"/>
-    <img src="Photos/27signup.jpg" alt="Splash Screen 3" width="200"/>
-    <p><em>Figure 2: Sign In & Sign Up
-</em></p>
+    <img src="Photos/27signup.jpg" alt="Sign Up" width="200"/>
+    <p><em>Figure 2: Sign In & Sign Up</em></p>
 </div>
 
 <div align="center">
     <img src="Photos/29availableitems.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/32availableitems2.jpg" alt="Sign In 2" width="200"/>
-    <img src="Photos/33availableitems3.jpg" alt="Splash Screen 3" width="200"/>
-    <img src="Photos/34availableitems4.jpg" alt="Sign In 2" width="200"/>
-    <img src="Photos/35availableitems5.jpg" alt="Splash Screen 3" width="200"/>
-    <img src="Photos/42availableitems6.jpg" alt="Splash Screen 3" width="200"/>
-    <p><em>Figure 3: HomeView
-</em></p>
+    <img src="Photos/32availableitems2.jpg" alt="Available Items" width="200"/>
+    <img src="Photos/33availableitems3.jpg" alt="Available Items" width="200"/>
+    <img src="Photos/34availableitems4.jpg" alt="Available Items" width="200"/>
+    <img src="Photos/35availableitems5.jpg" alt="Available Items" width="200"/>
+    <img src="Photos/42availableitems6.jpg" alt="Available Items" width="200"/>
+    <p><em>Figure 3: HomeView</em></p>
 </div>
 
 <div align="center">
-    <img src="Photos/36itemview.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/37itemview2.jpg" alt="Sign In 2" width="200"/>
-    <img src="Photos/38itemview3.jpg" alt="Splash Screen 3" width="200"/>
-    <img src="Photos/43itemview4.jpg" alt="Splash Screen 3" width="200"/>
-    <p><em>Figure 4: ItemView
-</em></p>
+    <img src="Photos/36itemview.jpg" alt="Item View" width="200"/>
+    <img src="Photos/37itemview2.jpg" alt="Item View" width="200"/>
+    <img src="Photos/38itemview3.jpg" alt="Item View" width="200"/>
+    <img src="Photos/43itemview4.jpg" alt="Item View" width="200"/>
+    <p><em>Figure 4: ItemView</em></p>
 </div>
 
 <div align="center">
-    <img src="Photos/39myorders.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/44myorders2.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/45myorders3.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/46myorders4.jpg" alt="Available Items" width="200"/>
-    <p><em>Figure 5: MyOrderView
-</em></p>
+    <img src="Photos/39myorders.jpg" alt="My Orders" width="200"/>
+    <img src="Photos/44myorders2.jpg" alt="My Orders" width="200"/>
+    <img src="Photos/45myorders3.jpg" alt="My Orders" width="200"/>
+    <img src="Photos/46myorders4.jpg" alt="My Orders" width="200"/>
+    <p><em>Figure 5: MyOrderView</em></p>
 </div>
 
 <div align="center">
-    <img src="Photos/40myfavouriteitems.jpg" alt="Available Items" width="200"/>
-    <p><em>Figure 6: FavouriteView
-</em></p>
+    <img src="Photos/40myfavouriteitems.jpg" alt="Favorite Items" width="200"/>
+    <p><em>Figure 6: FavouriteView</em></p>
 </div>
 
 <div align="center">
-    <img src="Photos/41profiles.jpg" alt="Available Items" width="200"/>
-    <p><em>Figure 7: ProfileView
-</em></p>
+    <img src="Photos/41profiles.jpg" alt="Profile View" width="200"/>
+    <p><em>Figure 7: ProfileView</em></p>
 </div>
 
 ---
@@ -109,54 +102,46 @@ The **Foodier! Restaurant** app allows restaurant owners to manage orders, updat
 #### Screenshots
 
 <div align="center">
-    <img src="Photos/1signin.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/2signup.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/3signup2.jpg" alt="Available Items" width="200"/>
-    <p><em>Figure 1: Sign In & Sign Up
-</em></p>
+    <img src="Photos/1signin.jpg" alt="Sign In" width="200"/>
+    <img src="Photos/2signup.jpg" alt="Sign Up" width="200"/>
+    <img src="Photos/3signup2.jpg" alt="Sign Up" width="200"/>
+    <p><em>Figure 1: Sign In & Sign Up</em></p>
 </div>
 
 <div align="center">
-    <img src="Photos/4home.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/12home2.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/13home3.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/14home4.jpg" alt="Available Items" width="200"/>
-    <p><em>Figure 2: HomeView
-</em></p>
+    <img src="Photos/4home.jpg" alt="Home View" width="200"/>
+    <img src="Photos/12home2.jpg" alt="Home View" width="200"/>
+    <img src="Photos/13home3.jpg" alt="Home View" width="200"/>
+    <img src="Photos/14home4.jpg" alt="Home View" width="200"/>
+    <p><em>Figure 2: HomeView</em></p>
 </div>
 
 <div align="center">
-    <img src="Photos/5additem.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/6additem2.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/7additem3.jpg" alt="Available Items" width="200"/>
-    <p><em>Figure 3: AddItemView
-</em></p>
+    <img src="Photos/5additem.jpg" alt="Add Item" width="200"/>
+    <img src="Photos/6additem2.jpg" alt="Add Item" width="200"/>
+    <img src="Photos/7additem3.jpg" alt="Add Item" width="200"/>
+    <p><em>Figure 3: AddItemView</em></p>
 </div>
 
 <div align="center">
-    <img src="Photos/17myorder.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/18myorder2.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/19myorder3.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/20myorder4.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/21myorder5.jpg" alt="Available Items" width="200"/>
-    <p><em>Figure 4: MyOrderView
-</em></p>
-</div>
-
-
-<div align="center">
-    <img src="Photos/9mykitchen.jpg" alt="Available Items" width="200"/>
-    <img src="Photos/15mykitchen2.jpg" alt="Available Items" width="200"/>
-    <p><em>Figure 5: MyKitchenView
-</em></p>
+    <img src="Photos/17myorder.jpg" alt="My Orders" width="200"/>
+    <img src="Photos/18myorder2.jpg" alt="My Orders" width="200"/>
+    <img src="Photos/19myorder3.jpg" alt="My Orders" width="200"/>
+    <img src="Photos/20myorder4.jpg" alt="My Orders" width="200"/>
+    <img src="Photos/21myorder5.jpg" alt="My Orders" width="200"/>
+    <p><em>Figure 4: MyOrderView</em></p>
 </div>
 
 <div align="center">
-    <img src="Photos/16profile.jpg" alt="Available Items" width="200"/>
-    <p><em>Figure 6: ProfileView
-</em></p>
+    <img src="Photos/9mykitchen.jpg" alt="My Kitchen" width="200"/>
+    <img src="Photos/15mykitchen2.jpg" alt="My Kitchen" width="200"/>
+    <p><em>Figure 5: MyKitchenView</em></p>
 </div>
 
+<div align="center">
+    <img src="Photos/16profile.jpg" alt="Profile View" width="200"/>
+    <p><em>Figure 6: ProfileView</em></p>
+</div>
 
 ---
 
@@ -179,33 +164,18 @@ Both **Foodier!** and **Foodier! Restaurant** are connected to the same Firebase
 #### Screenshots
 
 <div align="center">
-    <div align="center">
-    <img src="Photos/47Firebase.jpg" alt="Splash Screen 1" width="800"/>
-    <div align="center">
-    <img src="Photos/48firebaseauthentication.jpg" alt="Splash Screen 1" width="800"/>
-    <div align="center">
-    <img src="Photos/49storages.jpg" alt="Splash Screen 1" width="800"/>
-    <div align="center">
-    <img src="Photos/50storages.jpg" alt="Splash Screen 1" width="800"/>
-    <div align="center">
-    <img src="Photos/51firestore.jpg" alt="Splash Screen 1" width="800"/>
-    <div align="center">
-    <img src="Photos/52firestore.jpg" alt="Splash Screen 1" width="800"/>
-    <div align="center">
-    <img src="Photos/53firestore.jpg" alt="Splash Screen 1" width="800"/>
-    <div align="center">
-    <img src="Photos/54firestore.jpg" alt="Splash Screen 1" width="800"/>
-    <div align="center">
-    <img src="Photos/55firestore.jpg" alt="Splash Screen 1" width="800"/>
-    <div align="center">
-    <img src="Photos/56firestore.jpg" alt="Splash Screen 1" width="800"/>
-    <p><em>Figure 1: Firebase as Database
-    
-</em></p>
+    <img src="Photos/47Firebase.jpg" alt="Firebase Overview" width="800"/>
+    <img src="Photos/48firebaseauthentication.jpg" alt="Firebase Authentication" width="800"/>
+    <img src="Photos/49storages.jpg" alt="Firebase Storage" width="800"/>
+    <img src="Photos/50storages.jpg" alt="Firebase Storage" width="800"/>
+    <img src="Photos/51firestore.jpg" alt="Cloud Firestore" width="800"/>
+    <img src="Photos/52firestore.jpg" alt="Cloud Firestore" width="800"/>
+    <img src="Photos/53firestore.jpg" alt="Cloud Firestore" width="800"/>
+    <p><em>Figure 1: Firebase Integration</em></p>
 </div>
 
-
 ---
+
 
 ## Installation
 

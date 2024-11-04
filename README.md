@@ -164,6 +164,46 @@ The **Foodier! Restaurant** app allows restaurant owners to manage orders, updat
 
 - **Language**: Swift
 - **Platform**: iOS
+- **Database**: Firebase
+
+### Firebase Integration
+
+Foodier utilizes **Firebase** to seamlessly manage and synchronize data across both applications:
+
+- **Firebase Storage**: Stores all images, including menu items, restaurant profiles, and user avatars.
+- **Cloud Firestore**: Serves as the primary database for storing structured text data such as restaurant information, menu details, order histories, and user preferences.
+- **Firebase Authentication**: Manages user authentication, allowing secure sign-in and sign-up processes for both customers and restaurants.
+
+Both **Foodier!** and **Foodier! Restaurant** are connected to the same Firebase database, enabling real-time data sharing and updates between the customer and restaurant applications.
+
+#### Screenshots
+
+<div align="center">
+    <div align="center">
+    <img src="Photos/47Firebase.jpg" alt="Splash Screen 1" width="800"/>
+    <div align="center">
+    <img src="Photos/48firebaseauthentication.jpg" alt="Splash Screen 1" width="800"/>
+    <div align="center">
+    <img src="Photos/49storages.jpg" alt="Splash Screen 1" width="800"/>
+    <div align="center">
+    <img src="Photos/50storages.jpg" alt="Splash Screen 1" width="800"/>
+    <div align="center">
+    <img src="Photos/51firestore.jpg" alt="Splash Screen 1" width="800"/>
+    <div align="center">
+    <img src="Photos/52firestore.jpg" alt="Splash Screen 1" width="800"/>
+    <div align="center">
+    <img src="Photos/53firestore.jpg" alt="Splash Screen 1" width="800"/>
+    <div align="center">
+    <img src="Photos/54firestore.jpg" alt="Splash Screen 1" width="800"/>
+    <div align="center">
+    <img src="Photos/55firestore.jpg" alt="Splash Screen 1" width="800"/>
+    <div align="center">
+    <img src="Photos/56firestore.jpg" alt="Splash Screen 1" width="800"/>
+    <p><em>Figure 1: Firebase as Database
+    
+</em></p>
+</div>
+
 
 ---
 

@@ -140,7 +140,7 @@ The **[Foodier! Restaurant](Foodier!%20Restaurant/)** app allows restaurant owne
 
 <div align="center">
     <img src="Photos/9mykitchen.jpg" alt="My Kitchen" width="200"/>
-    <img src="Photos/15mykitchen2.jpg" alt="My Kitchen" width="200"/>
+    <!-- <img src="Photos/15mykitchen2.jpg" alt="My Kitchen" width="200"/> -->
     <p><em>Figure 5: MyKitchenView</em></p>
 </div>
 

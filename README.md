@@ -58,11 +58,17 @@ The **[Foodier!](Foodier!/)** app enables customers to explore a variety of dish
 </div>
 
 <div align="center">
+    <img src="Photos/30locations.jpg" alt="Item View" width="200"/>
+    <img src="Photos/31locations2.jpg" alt="Item View" width="200"/>
+    <p><em>Figure 4: LocationView</em></p>
+</div>
+
+<div align="center">
     <img src="Photos/36itemview.jpg" alt="Item View" width="200"/>
     <img src="Photos/37itemview2.jpg" alt="Item View" width="200"/>
     <img src="Photos/38itemview3.jpg" alt="Item View" width="200"/>
     <img src="Photos/43itemview4.jpg" alt="Item View" width="200"/>
-    <p><em>Figure 4: ItemView</em></p>
+    <p><em>Figure 5: ItemView</em></p>
 </div>
 
 <div align="center">
@@ -70,17 +76,17 @@ The **[Foodier!](Foodier!/)** app enables customers to explore a variety of dish
     <img src="Photos/44myorders2.jpg" alt="My Orders" width="200"/>
     <img src="Photos/45myorders3.jpg" alt="My Orders" width="200"/>
     <img src="Photos/46myorders4.jpg" alt="My Orders" width="200"/>
-    <p><em>Figure 5: MyOrderView</em></p>
+    <p><em>Figure 6: MyOrderView</em></p>
 </div>
 
 <div align="center">
     <img src="Photos/40myfavouriteitems.jpg" alt="Favorite Items" width="200"/>
-    <p><em>Figure 6: FavouriteView</em></p>
+    <p><em>Figure 7: FavouriteView</em></p>
 </div>
 
 <div align="center">
     <img src="Photos/41profiles.jpg" alt="Profile View" width="200"/>
-    <p><em>Figure 7: ProfileView</em></p>
+    <p><em>Figure 8: ProfileView</em></p>
 </div>
 
 ---

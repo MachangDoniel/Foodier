@@ -196,4 +196,4 @@ Contributions are welcome! If you have suggestions for improving Foodier, please
 This project is licensed under the Apache License - see the [LICENSE](LICENSE) file for details.
 ## Contact
 
-For any inquiries, please contact [donieltripura1971@gmail.com](donieltripura1971@gmail.com).
+For any inquiries, please contact [donieltripura1971@gmail.com](mailto:donieltripura1971@gmail.com)

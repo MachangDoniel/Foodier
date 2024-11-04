@@ -4,15 +4,15 @@ Welcome to **Foodier**, a dual-app Swift project designed to create an engaging 
 
 ## Apps Overview
 Foodier consists of two separate apps:
-- **[Foodier!](Foodier/)**: A seamless and personalized food ordering experience for customers.
-- **[Foodier Restaurant!](Foodier%20Restaurant/)**: A comprehensive restaurant management platform for handling orders, menus, and customer requests.
+- **[Foodier!](Foodier!/)**: A seamless and personalized food ordering experience for customers.
+- **[Foodier! Restaurant](Foodier!%20Restaurant/)**: A comprehensive restaurant management platform for handling orders, menus, and customer requests.
 
 ---
 
 ## Features Overview
 
 ### Foodier!
-The **[Foodier!](Foodier/)** app enables customers to explore a variety of dishes and restaurants, with options to save favorites, manage orders, and customize their experience.
+The **[Foodier!](Foodier!/)** app enables customers to explore a variety of dishes and restaurants, with options to save favorites, manage orders, and customize their experience.
 
 #### Key Screens
 1. **Splash Screen**: Welcomes users with a vibrant introduction.
@@ -86,7 +86,7 @@ The **[Foodier!](Foodier/)** app enables customers to explore a variety of dishe
 ---
 
 ### Foodier! Restaurant
-The **[Foodier Restaurant!](Foodier%20Restaurant/)** app allows restaurant owners to manage orders, update menus, and oversee kitchen operations efficiently.
+The **[Foodier! Restaurant](Foodier!%20Restaurant/)** app allows restaurant owners to manage orders, update menus, and oversee kitchen operations efficiently.
 
 #### Key Screens
 1. **Sign In & Sign Up**: Secure access to the restaurant management platform.

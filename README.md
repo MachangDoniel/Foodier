@@ -174,9 +174,12 @@ Both **Foodier!** and **Foodier! Restaurant** are connected to the same Firebase
     <img src="Photos/48firebaseauthentication.jpg" alt="Firebase Authentication" width="800"/>
     <img src="Photos/49storages.jpg" alt="Firebase Storage" width="800"/>
     <img src="Photos/50storages.jpg" alt="Firebase Storage" width="800"/>
-    <img src="Photos/51firestore.jpg" alt="Cloud Firestore" width="800"/>
+    <!-- <img src="Photos/51firestore.jpg" alt="Cloud Firestore" width="800"/> -->
     <img src="Photos/52firestore.jpg" alt="Cloud Firestore" width="800"/>
     <img src="Photos/53firestore.jpg" alt="Cloud Firestore" width="800"/>
+    <img src="Photos/54firestore.jpg" alt="Cloud Firestore" width="800"/>
+    <img src="Photos/55firestore.jpg" alt="Cloud Firestore" width="800"/>
+    <img src="Photos/56firestore.jpg" alt="Cloud Firestore" width="800"/>
     <p><em>Figure 1: Firebase Integration</em></p>
 </div>
 
